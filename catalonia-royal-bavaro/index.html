@@ -281,6 +281,11 @@
     .tira-nota{font-size:12px}
     .cab-env{gap:10px;padding:0 12px}
     .cab-nombre{font-size:12.5px;overflow:hidden;text-overflow:ellipsis}
+    /* en pantalla estrecha cae el prefijo de cadena: «Royal Bávaro» distingue; «Catalonia Ro…» no.
+       flex-shrink:0 → el que cede es el carril de chips (que ya sabe hacer scroll), no el nombre;
+       max-width:55% + ellipsis quedan de tope de seguridad para nombres extremos */
+    .cab-marca{display:none}
+    .cab-nombre{flex-shrink:0;max-width:55%}
   }
 
   /* ── accesibilidad: sin movimiento, la ficha sigue entera ─ */
@@ -295,7 +300,10 @@
 
 <nav class="cabina" id="cabina" aria-label="Secciones de la ficha">
   <div class="cab-env">
-    <span class="cab-nombre">Catalonia Royal Bávaro</span>
+    <!-- CONVENCION FAMILIA: el prefijo de cadena va en .cab-marca; el movil lo oculta
+         y sobrevive la parte DISTINTIVA. Un solo nombre por ficha, nunca dos.
+         Hotel sin cadena (HM Alma, Whala…): no se envuelve nada y todo sigue igual. -->
+    <span class="cab-nombre"><span class="cab-marca">Catalonia </span>Royal Bávaro</span>
     <span class="cab-datos">Solo adultos 18+ · Máx 3 por hab · Promo hasta 20 ago</span>
     <div class="cab-anclas" id="cab-anclas"></div>
   </div>
