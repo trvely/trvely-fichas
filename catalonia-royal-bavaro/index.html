@@ -151,8 +151,9 @@
   /* ── desplegables ──────────────────────────────────────── */
   details{background:#fff;border:1px solid var(--linea);border-radius:14px;
           padding:15px 18px;margin-bottom:10px;box-shadow:var(--sombra)}
+  /* min-height 44px: es lo que se toca con el pulgar en el celular (regla de marca) */
   summary{cursor:pointer;font-weight:700;font-size:15.5px;list-style:none;
-          display:flex;align-items:flex-start;gap:12px;min-height:28px}
+          display:flex;align-items:center;gap:12px;min-height:44px}
   summary::-webkit-details-marker{display:none}
   summary::before{content:"+";color:var(--burgundy);font-weight:800;font-size:19px;
           line-height:1.2;flex:0 0 auto}
