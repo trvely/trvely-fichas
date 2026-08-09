@@ -4,84 +4,180 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Fichas de venta · Trvely · Área de Producto</title>
+<title>Academia de Producto · Trvely</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
+  /* ── marca ─────────────────────────────────────────────── */
+  @font-face{
+    font-family:"Extenda";
+    src:url("assets/extenda.ttf") format("truetype");
+    font-weight:400;font-style:normal;font-display:swap;
+  }
+  @font-face{
+    font-family:"White Star";
+    src:url("assets/whitestar.otf") format("opentype");
+    font-weight:400;font-style:normal;font-display:swap;
+  }
   :root{
-    --burgundy:#B41241; --burgundy-osc:#8A0E32; --beige:#F4E5D2;
-    --tinta:#1E1A18; --gris:#6B625C; --linea:#E4D7C6; --papel:#FFFDFB;
-    --sombra:0 1px 2px rgba(30,26,24,.05), 0 8px 24px rgba(30,26,24,.06);
+    --burgundy:#B41241; --burgundy-osc:#870D31;
+    --beige:#F4E5D2; --crema:#FFFCF3;
+    --tinta:#1E1A18; --gris:#6B625C;
+    --linea:#E6DDCE; --beige-tinte:#F9F1E4;
+    --sombra:0 1px 2px rgba(30,26,24,.05), 0 10px 30px -12px rgba(30,26,24,.14);
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--beige);color:var(--tinta);
+  body{margin:0;background:var(--crema);color:var(--tinta);
        font-family:"Montserrat",-apple-system,"Segoe UI",Roboto,sans-serif;
        font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
   .env{max-width:1080px;margin:0 auto;padding:0 20px}
   img{max-width:100%;display:block}
+  a{color:var(--burgundy)}
 
-  header{background:var(--burgundy);color:#fff;padding:44px 0 38px}
-  .kicker{font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;opacity:.85;font-weight:800}
-  h1{font-size:clamp(32px,6vw,56px);line-height:1;margin:12px 0 10px;
-     font-weight:800;letter-spacing:-.015em;text-transform:uppercase}
-  .sub{font-size:clamp(15px,2.2vw,19px);opacity:.94;max-width:60ch;margin:0}
+  /* ── portada ───────────────────────────────────────────── */
+  .hero{position:relative;border-radius:44px;overflow:hidden;margin-top:20px;
+        background:var(--burgundy);color:#fff;padding:clamp(38px,6vw,66px) clamp(26px,5vw,58px)}
+  .hero .eyebrow{color:var(--beige);font-weight:700;font-size:12px;letter-spacing:.22em;
+        text-transform:uppercase}
+  h1{font-family:"Extenda","Montserrat",sans-serif;font-weight:400;
+     font-size:clamp(42px,8.5vw,92px);line-height:.95;text-transform:uppercase;
+     margin:14px 0 16px;max-width:16ch}
+  .hero .sub{font-size:clamp(15px,2.1vw,19px);opacity:.95;max-width:56ch;margin:0}
 
-  section{padding:38px 0 6px}
-  h2{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--burgundy);
-     font-weight:800;margin:0 0 16px;padding-bottom:9px;border-bottom:2px solid var(--burgundy)}
+  /* ── la regla de la casa ───────────────────────────────── */
+  .regla{background:var(--crema);color:var(--tinta);border-radius:40px;
+        box-shadow:0 0 40px -18px rgba(30,26,24,.3);
+        margin:-46px 28px 0;padding:26px 44px;position:relative;z-index:2;
+        display:flex;align-items:center;gap:22px}
+  .regla .foto{flex:0 0 auto;width:74px;height:74px;border-radius:50%;overflow:hidden;
+        background:var(--beige);border:2px solid var(--beige)}
+  .regla .foto img{width:100%;height:145%;object-fit:cover;object-position:top}
+  .regla .k{font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+        color:var(--burgundy);margin-bottom:5px}
+  .regla p{margin:0;font-size:15px;max-width:74ch}
 
-  .fichas{display:grid;gap:16px;grid-template-columns:1fr}
+  /* ── secciones ─────────────────────────────────────────── */
+  section{padding:48px 0 8px}
+  h2{margin:0 0 6px;font-size:clamp(20px,3vw,25px);font-weight:800;letter-spacing:-.01em}
+  h2 .n{display:block;font-size:11.5px;font-weight:800;letter-spacing:.24em;
+        color:var(--burgundy);margin-bottom:6px}
+  .intro{color:var(--gris);margin:0 0 22px;max-width:70ch}
+
+  /* ── tarjetas de ficha ─────────────────────────────────── */
+  .fichas{display:grid;gap:18px;grid-template-columns:1fr}
   @media(min-width:720px){.fichas{grid-template-columns:1fr 1fr}}
-  .ficha{background:var(--papel);border:1px solid var(--linea);border-radius:16px;
-         overflow:hidden;box-shadow:var(--sombra);text-decoration:none;color:inherit;
-         display:flex;flex-direction:column;transition:transform .25s ease, box-shadow .25s ease}
-  .ficha:hover{transform:translateY(-3px);box-shadow:0 4px 8px rgba(30,26,24,.07), 0 16px 40px rgba(30,26,24,.10)}
-  .ficha img{width:100%;height:170px;object-fit:cover}
-  .ficha .cuerpo{padding:18px 20px 20px}
-  .ficha h3{margin:0 0 6px;font-size:20px;font-weight:800;letter-spacing:-.01em}
-  .ficha p{margin:0;font-size:14px;color:var(--gris)}
-  .etiquetas{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-  .et{background:#F9F1E6;border:1px solid var(--linea);padding:3px 10px;border-radius:99px;
-      font-size:11.5px;font-weight:700;color:var(--burgundy)}
+  .ficha{background:#fff;border:1px solid var(--linea);border-radius:22px;overflow:hidden;
+         box-shadow:var(--sombra);text-decoration:none;color:inherit;display:block;
+         transition:transform .3s ease, box-shadow .3s ease}
+  .ficha:hover{transform:translateY(-4px);
+         box-shadow:0 4px 10px rgba(30,26,24,.07), 0 22px 50px -18px rgba(30,26,24,.22)}
+  .ficha .marco{position:relative;line-height:0}
+  .ficha .marco img{width:100%;height:200px;object-fit:cover}
+  .ficha .marco .velo{position:absolute;inset:0;
+         background:linear-gradient(180deg,rgba(20,12,14,0) 45%,rgba(20,12,14,.72) 100%)}
+  .ficha .marco .rotulo{position:absolute;left:22px;right:22px;bottom:18px;color:#fff}
+  .ficha .marco .rotulo b{display:block;font-size:21px;font-weight:800;letter-spacing:-.01em}
+  .ficha .marco .rotulo span{font-size:13px;opacity:.92}
+  .ficha .pie{padding:16px 22px 20px;display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+  .et{background:var(--beige-tinte);border:1px solid var(--linea);padding:4px 11px;
+      border-radius:99px;font-size:11.5px;font-weight:700;color:var(--burgundy)}
+  .et.lista{background:var(--burgundy);color:#fff;border-color:var(--burgundy)}
 
-  .banda{border-left:4px solid var(--burgundy);background:#fff;padding:16px 19px;
-         border-radius:0 12px 12px 0;margin:18px 0;box-shadow:var(--sombra)}
-  .banda.alerta{border-left-color:var(--burgundy);background:#FDF3F6}
-  .banda .t{font-weight:800;font-size:12px;letter-spacing:.09em;text-transform:uppercase;
-            margin-bottom:6px;color:var(--burgundy)}
+  /* ── las que vienen ────────────────────────────────────── */
+  .proximas{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
+  .prox{background:var(--beige-tinte);border:1px solid var(--linea);border-radius:16px;
+        padding:16px 18px}
+  .prox b{display:block;font-size:15px;font-weight:800;line-height:1.25}
+  .prox span{display:block;font-size:12.5px;color:var(--gris);margin-top:3px}
+  .prox .en-camino{display:inline-block;margin-top:12px;border:1px solid var(--burgundy);
+        color:var(--burgundy);border-radius:99px;padding:3px 11px;
+        font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
 
-  footer{margin-top:44px;padding:24px 0 44px;border-top:1px solid var(--linea);
-         font-size:12.5px;color:var(--gris)}
+  /* ── banda de cierre ───────────────────────────────────── */
+  .t-band{background:var(--burgundy);border-radius:44px;overflow:hidden;position:relative;
+        color:#fff;margin-top:52px}
+  .t-band .cuerpo{display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:end}
+  .t-band .habla{padding:clamp(30px,5vw,52px)}
+  .t-band .logo{width:120px;margin-bottom:22px}
+  .t-band .titulo{font-weight:800;font-size:clamp(20px,3.2vw,27px);line-height:1.25;margin:0 0 14px}
+  .t-band p{color:#fff;opacity:.96;margin:0 0 12px;max-width:56ch;font-size:15.5px}
+  .t-band .firma{font-size:14px;font-style:italic;opacity:.95;margin-top:18px}
+  .t-band .firma b{font-style:normal}
+  .t-band .retrato{position:relative;align-self:end;min-height:210px}
+  .t-band .arco{position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+        width:250px;height:250px;border-radius:50% 50% 0 0;background:var(--crema)}
+  .t-band .retrato img{position:relative;width:290px;margin:0 auto;display:block}
+  @media(max-width:760px){
+    .t-band .cuerpo{grid-template-columns:1fr}
+    .t-band .retrato{min-height:250px}
+  }
+
+  /* ── la firma del proyecto ─────────────────────────────── */
+  .filosofia{text-align:center;margin:56px 0 8px;padding:34px 20px;
+        border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+  .filosofia q{font-family:"White Star","Montserrat",cursive;font-weight:400;
+        font-size:clamp(30px,5.6vw,46px);color:var(--burgundy);line-height:1.15;
+        display:block;quotes:none}
+  .filosofia span{display:block;margin-top:12px;font-size:11px;font-weight:800;
+        letter-spacing:.2em;text-transform:uppercase;color:var(--gris)}
+
+  footer{margin-top:34px;padding:24px 0 48px;font-size:12.5px;color:var(--gris)}
+
+  @media(max-width:640px){
+    .hero{border-radius:28px}
+    .regla{margin:-34px 10px 0;padding:20px 24px;gap:16px;border-radius:26px;
+           flex-direction:column;align-items:flex-start}
+    .t-band{border-radius:28px}
+  }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="env">
-    <div class="kicker">Trvely · Área de Producto</div>
-    <h1>Fichas<br>de venta</h1>
-    <p class="sub">Cómo vender cada hotel. Lo que incluye, a quién le sirve, qué te van a preguntar
-    y qué no puedes prometer.</p>
-  </div>
-</header>
-
 <div class="env">
 
+<div class="hero">
+  <div class="eyebrow">Trvely · Área de Producto</div>
+  <h1>Academia<br>de Producto</h1>
+  <p class="sub">Aquí el asesor aprende el producto, reconoce a su cliente, entiende qué puede
+  ofrecer y aprende cómo contarlo.</p>
+</div>
+
+<div class="regla">
+  <div class="foto">
+    <picture>
+      <source srcset="assets/triana.webp" type="image/webp">
+      <img src="assets/triana.png" alt="Triana">
+    </picture>
+  </div>
+  <div>
+    <div class="k">La regla de la casa</div>
+    <p>El hotelero nos entrega los hechos; <strong>Trvely los convierte en conocimiento
+    comercial.</strong> No copiamos por copiar, no inventamos, no exageramos — y cuando hay una
+    duda, preguntamos antes de prometer.</p>
+  </div>
+</div>
+
 <section>
-  <h2>Hoteles</h2>
+  <h2><span class="n">01</span>Fichas publicadas</h2>
+  <p class="intro">Cada ficha enseña a vender un hotel: a quién le sirve, qué incluye, qué te van a
+  preguntar y qué no se puede prometer.</p>
   <div class="fichas">
 
     <a class="ficha" href="catalonia-royal-bavaro/">
-      <img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_003.jpg" alt="Catalonia Royal Bávaro">
-      <div class="cuerpo">
-        <h3>Catalonia Royal Bávaro</h3>
-        <p>Punta Cana, República Dominicana</p>
-        <div class="etiquetas">
-          <span class="et">Solo adultos 18+</span>
-          <span class="et">284 suites</span>
-          <span class="et">Todo incluido</span>
+      <div class="marco">
+        <img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_003.jpg" alt="Catalonia Royal Bávaro">
+        <div class="velo"></div>
+        <div class="rotulo">
+          <b>Catalonia Royal Bávaro</b>
+          <span>Punta Cana · República Dominicana</span>
         </div>
+      </div>
+      <div class="pie">
+        <span class="et lista">Ficha lista</span>
+        <span class="et">Solo adultos 18+</span>
+        <span class="et">284 suites</span>
+        <span class="et">Todo incluido</span>
       </div>
     </a>
 
@@ -89,20 +185,47 @@
 </section>
 
 <section>
-  <h2>Cómo se usa</h2>
-  <div class="banda alerta">
-    <div class="t">La regla que protege tu comisión</div>
-    <strong>Nunca le mandes al cliente la página pública del hotel.</strong> Esa página tiene el
-    canal de contacto de la empresa: el cliente que tú trabajaste durante semanas puede escribir por
-    ahí y <strong>la venta se la lleva otro</strong>.<br><br>
-    Para enseñarle el hotel, usa <strong>la galería</strong> que enlaza cada ficha. No tiene botón
-    de venta — por eso existe. Todo lo demás, se lo explicas tú.
-  </div>
-  <div class="banda">
-    <div class="t">Si un dato no cuadra</div>
-    Avísale a Producto <strong>antes</strong> de prometerlo. Es más barato preguntar que corregir.
+  <h2><span class="n">02</span>Las que vienen</h2>
+  <p class="intro">La familia Catalonia completa. Cada una entra cuando su producto, sus fotos y su
+  documento de verdad estén los tres listos — no antes.</p>
+  <div class="proximas">
+    <div class="prox"><b>Catalonia Bayahíbe</b><span>Rep. Dominicana</span><span class="en-camino">Ficha en camino</span></div>
+    <div class="prox"><b>Catalonia Royal La Romana</b><span>Rep. Dominicana</span><span class="en-camino">Ficha en camino</span></div>
+    <div class="prox"><b>Catalonia Bávaro Beach</b><span>Rep. Dominicana</span><span class="en-camino">Ficha en camino</span></div>
+    <div class="prox"><b>Catalonia Riviera Maya</b><span>México</span><span class="en-camino">Ficha en camino</span></div>
+    <div class="prox"><b>Catalonia Grand Costa Mujeres</b><span>México</span><span class="en-camino">Ficha en camino</span></div>
+    <div class="prox"><b>Catalonia Playa Maroma</b><span>México</span><span class="en-camino">Ficha en camino</span></div>
+    <div class="prox"><b>Catalonia Royal Tulum</b><span>México</span><span class="en-camino">Ficha en camino</span></div>
   </div>
 </section>
+
+<div class="t-band">
+  <div class="cuerpo">
+    <div class="habla">
+      <img class="logo" src="assets/logo-beige.png" alt="Trvely">
+      <div class="titulo">La regla que protege tu comisión</div>
+      <p><strong>Nunca le mandes al cliente la página pública del hotel.</strong> Esa página tiene
+      el canal de contacto de la empresa: el cliente que tú trabajaste durante semanas puede
+      escribir por ahí y <strong>la venta se la lleva otro</strong>.</p>
+      <p>Para enseñarle el hotel, usa <strong>la galería</strong> que enlaza cada ficha. No tiene
+      botón de venta — por eso existe. Todo lo demás, se lo explicas tú.</p>
+      <div class="firma">«Ese cliente es tuyo porque tú lo trabajaste. Enséñale con la galería,
+      cuéntale tú el resto — y cierra tú la venta.» — <b>Triana</b></div>
+    </div>
+    <div class="retrato">
+      <div class="arco"></div>
+      <picture>
+        <source srcset="assets/triana.webp" type="image/webp">
+        <img src="assets/triana.png" alt="Triana, la asesora de Trvely">
+      </picture>
+    </div>
+  </div>
+</div>
+
+<div class="filosofia">
+  <q>Es más barato preguntar que corregir</q>
+  <span>La forma de trabajar de Trvely</span>
+</div>
 
 <footer>
   <div><strong>Trvely · Área de Producto</strong> — material interno de apoyo comercial.

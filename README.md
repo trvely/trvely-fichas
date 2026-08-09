@@ -1,10 +1,38 @@
-# trvely-fichas — Fichas de venta para asesores
+# trvely-fichas — Academia de Producto Trvely
 
 Material **interno** de apoyo comercial, publicado como GitHub Pages.
 Una ficha por hotel: **cómo venderlo**, no un folleto del hotel.
 
 > *«Que el comercial encuentre todo el apoyo para que aprenda, se llene de conocimiento, y cuando
 > vaya a asesorar, sepa qué vender.»* — EL PATRÓN
+
+**Qué es en realidad:** una **Academia de Producto**, donde el asesor aprende el producto,
+identifica al cliente correcto, entiende qué puede ofrecer y aprende cómo comunicarlo.
+
+## ⭐ LA REGLA DE ORO DE TODAS LAS FICHAS
+
+> **El hotelero nos entrega los hechos; Trvely los convierte en conocimiento comercial.**
+> No copiar por copiar, no inventar, no exagerar — y cuando exista una duda, **preguntar antes de
+> prometer.**
+
+> ### *«Es más barato preguntar que corregir.»*
+> La frase del pie de la primera ficha, ascendida a filosofía del proyecto por el CEO.
+
+## 🗣️ EL TONO TRVELY (rige toda la Academia)
+
+Cercano, claro y directo — **sin perder la sensación premium, elegante y experta** de la marca.
+**Triana acompaña y enseña; no regaña ni asusta.** Se conserva la fuerza del aviso y se eleva el
+lenguaje:
+
+| En vez de | Se escribe |
+|---|---|
+| «La trampa de las bebidas» | «Lo que debes saber antes de prometer las bebidas» |
+| «El filtro que arruina una venta entera» | «La pregunta que debes hacer antes de cotizar» |
+| «Errores que no puedes cometer» | «Lo que no se promete» |
+| «Dos categorías que existen y NO puedes vender» | «Dos categorías que el hotel tiene y nosotros no cotizamos» |
+| «Se paga aparte — dilo tú antes» | «Se paga aparte — conviene anticiparlo» |
+
+El aviso sigue estando y el dato no cambia: **cambia quién parece estar hablando.**
 
 ## 🔴 La regla que no se rompe
 
