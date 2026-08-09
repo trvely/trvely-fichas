@@ -36,6 +36,30 @@
   img{max-width:100%;display:block}
   a{color:var(--burgundy)}
 
+  /* ── la cabina: mini-barra fija con spy ─────────────────────
+     Aparece solo cuando el hero ya paso. Las anclas 01-09 se
+     AUTOGENERAN leyendo los h2 (cero mantenimiento por ficha). */
+  .cabina{position:fixed;top:0;left:0;right:0;z-index:50;
+        background:rgba(255,252,243,.96);border-bottom:1px solid var(--linea);
+        transform:translateY(-105%);transition:transform .25s ease-out}
+  @supports (backdrop-filter: blur(8px)){
+    .cabina{background:rgba(255,252,243,.78);backdrop-filter:blur(8px)}
+  }
+  .cabina.fija{transform:translateY(0)}
+  .cab-env{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;
+        align-items:center;gap:18px;min-height:52px}
+  .cab-nombre{font-weight:800;font-size:13.5px;white-space:nowrap}
+  .cab-datos{font-size:11px;font-weight:800;color:var(--burgundy);
+        letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+  .cab-anclas{margin-left:auto;display:flex;overflow-x:auto;scrollbar-width:none}
+  .cab-anclas::-webkit-scrollbar{display:none}
+  /* 44px: alto y ancho minimos tactiles, tambien en escritorio */
+  .cab-anclas a{display:flex;align-items:center;justify-content:center;
+        min-width:44px;min-height:44px;font-size:12px;font-weight:700;
+        color:var(--gris);text-decoration:none}
+  .cab-anclas a.activa{color:var(--burgundy);font-weight:800}
+  @media(max-width:760px){.cab-datos{display:none}}
+
   /* ── aviso del reloj ───────────────────────────────────── */
   .reloj{background:var(--burgundy-osc);color:#fff;font-size:13.5px;font-weight:700;
          padding:10px 16px;text-align:center;letter-spacing:.01em}
@@ -70,7 +94,7 @@
 
   /* ── Triana, la mentora ────────────────────────────────── */
   .mentora{display:flex;align-items:center;gap:18px;background:#fff;border:1px solid var(--linea);
-        border-radius:22px;padding:18px 24px;margin:34px 0 6px;box-shadow:var(--sombra)}
+        border-radius:22px;padding:18px 24px;margin:34px 0 6px}
   .mentora .foto{flex:0 0 auto;width:74px;height:74px;border-radius:50%;overflow:hidden;
         background:var(--beige);border:2px solid var(--beige)}
   .mentora .foto img{width:100%;height:145%;object-fit:cover;object-position:top}
@@ -91,7 +115,8 @@
         letter-spacing:.2em;text-transform:uppercase;color:var(--gris)}
 
   /* ── secciones ─────────────────────────────────────────── */
-  section{padding:46px 0 8px;scroll-margin-top:12px}
+  /* 72px = 52px de la cabina fija + aire; al saltar por ancla el h2 no queda tapado */
+  section{padding:46px 0 8px;scroll-margin-top:72px}
   h2{margin:0 0 18px;font-size:clamp(20px,3vw,25px);font-weight:800;letter-spacing:-.01em}
   h2 .n{display:block;font-size:11.5px;font-weight:800;letter-spacing:.24em;
         color:var(--burgundy);margin-bottom:6px}
@@ -100,7 +125,7 @@
   .lead{font-size:19px;line-height:1.5;font-weight:600;max-width:66ch}
 
   .tarjeta{background:#fff;border:1px solid var(--linea);border-radius:18px;
-           padding:22px 24px;margin-bottom:14px;box-shadow:var(--sombra)}
+           padding:22px 24px;margin-bottom:14px}
   .rejilla{display:grid;gap:14px}
   @media(min-width:760px){.rejilla.dos{grid-template-columns:1fr 1fr}}
 
@@ -108,12 +133,13 @@
   ul.si li::before{content:"✓";position:absolute;left:0;color:var(--burgundy);font-weight:800}
   ul.no li::before{content:"✕";position:absolute;left:0;color:var(--gris);font-weight:800}
 
-  /* ── bandas: un solo idioma de color ───────────────────── */
-  .banda{border-left:4px solid var(--burgundy);background:#fff;border:1px solid var(--linea);
-         border-left:4px solid var(--burgundy);padding:16px 19px;border-radius:0 14px 14px 0;
-         margin:16px 0;box-shadow:var(--sombra)}
+  /* ── bandas: un solo idioma de color ──────────────────────
+     Re-rango aprobado por el PATRON (09-ago): solo 3 bandas rojas
+     (menores 18+, Privileged falso, bebidas nacionales); el resto
+     queda en aviso neutro para que la alerta recupere su grito. */
+  .banda{border:1px solid var(--linea);border-left:4px solid var(--burgundy);
+         background:#fff;padding:16px 19px;border-radius:0 14px 14px 0;margin:16px 0}
   .banda.alerta{background:var(--burgundy-tinte);border-color:#F0D6DE;border-left-color:var(--burgundy)}
-  .banda.ojo{background:var(--beige-tinte);border-color:var(--linea);border-left-color:var(--burgundy)}
   .banda .t{display:inline-block;font-weight:800;font-size:11px;letter-spacing:.1em;
         text-transform:uppercase;margin-bottom:8px;color:var(--burgundy)}
   .banda.alerta .t{background:var(--burgundy);color:#fff;padding:3px 11px;border-radius:99px}
@@ -148,13 +174,15 @@
        color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.08em;opacity:.8}
 
   /* ── tabla ─────────────────────────────────────────────── */
-  .tabla-envoltura{overflow-x:auto;border-radius:18px;box-shadow:var(--sombra);
-       border:1px solid var(--linea)}
+  .tabla-envoltura{overflow-x:auto;border-radius:18px;border:1px solid var(--linea)}
   table{width:100%;border-collapse:collapse;font-size:14.5px;background:#fff;min-width:520px}
   th{background:var(--beige-tinte);text-align:left;padding:13px 14px;font-size:11.5px;
      letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--linea)}
-  td{padding:13px 14px;border-bottom:1px solid var(--linea);vertical-align:top}
+  td{padding:13px 14px;border-bottom:1px solid var(--linea);vertical-align:top;
+     transition:background-color .15s ease}
   tr:last-child td{border-bottom:0}
+  /* hover funcional: ilumina la fila; NUNCA atenua las demas (la tabla se lee comparando) */
+  tr:hover td{background:var(--beige-tinte)}
   .pill{display:inline-block;padding:3px 12px;border-radius:99px;font-size:11.5px;font-weight:800;
         letter-spacing:.04em;white-space:nowrap}
   .pill.si{background:var(--burgundy);color:#fff}
@@ -162,29 +190,36 @@
 
   /* ── desplegables ──────────────────────────────────────── */
   details{background:#fff;border:1px solid var(--linea);border-radius:14px;
-          padding:15px 18px;margin-bottom:10px;box-shadow:var(--sombra)}
+          padding:15px 18px;margin-bottom:10px}
   /* min-height 44px: es lo que se toca con el pulgar en el celular (regla de marca) */
   summary{cursor:pointer;font-weight:700;font-size:15.5px;list-style:none;
           display:flex;align-items:center;gap:12px;min-height:44px}
   summary::-webkit-details-marker{display:none}
   summary::before{content:"+";color:var(--burgundy);font-weight:800;font-size:19px;
-          line-height:1.2;flex:0 0 auto}
-  details[open] summary::before{content:"–"}
+          line-height:1.2;flex:0 0 auto;transition:rotate .2s ease-out}
+  details[open] summary::before{rotate:45deg}
   details[open] summary{margin-bottom:10px;color:var(--burgundy)}
+  /* apertura suave donde el navegador lo soporta; en el resto, corte clasico sin romper nada */
+  @supports (interpolate-size: allow-keywords){
+    :root{interpolate-size:allow-keywords}
+    details::details-content{block-size:0;overflow:clip;
+      transition:block-size .28s ease-out, content-visibility .28s allow-discrete}
+    details[open]::details-content{block-size:auto}
+  }
 
   /* ── cifras ────────────────────────────────────────────── */
   .cifras{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:12px}
-  .cifra{background:#fff;border:1px solid var(--linea);border-radius:16px;padding:17px;
-         box-shadow:var(--sombra)}
-  .cifra b{display:block;font-size:28px;line-height:1.1;color:var(--burgundy);font-weight:800}
+  .cifra{background:#fff;border:1px solid var(--linea);border-radius:16px;padding:17px}
+  /* tabular-nums: el count-up no hace bailar el ancho del numero */
+  .cifra b{display:block;font-size:28px;line-height:1.1;color:var(--burgundy);font-weight:800;
+         font-variant-numeric:tabular-nums}
   .cifra span{font-size:12.5px;color:var(--gris)}
 
   .fuente{font-size:12px;color:var(--gris);margin-top:10px;line-height:1.55}
 
   /* ── la familia Catalonia ──────────────────────────────── */
   .familia{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:14px}
-  .prop{border-radius:20px;overflow:hidden;min-height:196px;position:relative;
-        box-shadow:var(--sombra)}
+  .prop{border-radius:20px;overflow:hidden;min-height:196px;position:relative}
   .prop.foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .prop.foto .velo{position:absolute;inset:0;
         background:linear-gradient(180deg,rgba(20,12,14,0) 42%,rgba(20,12,14,.72) 100%)}
@@ -244,10 +279,27 @@
     .ibar{margin:-46px 10px 0;padding:20px 24px;gap:16px 26px;border-radius:26px}
     .mentora{align-items:flex-start}
     .tira-nota{font-size:12px}
+    .cab-env{gap:10px;padding:0 12px}
+    .cab-nombre{font-size:12.5px;overflow:hidden;text-overflow:ellipsis}
+  }
+
+  /* ── accesibilidad: sin movimiento, la ficha sigue entera ─ */
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .cabina,.gal img,.cta,summary::before,td{transition:none}
+    details::details-content{transition:none}
   }
 </style>
 </head>
 <body>
+
+<nav class="cabina" id="cabina" aria-label="Secciones de la ficha">
+  <div class="cab-env">
+    <span class="cab-nombre">Catalonia Royal Bávaro</span>
+    <span class="cab-datos">Solo adultos 18+ · Máx 3 por hab · Promo hasta 20 ago</span>
+    <div class="cab-anclas" id="cab-anclas"></div>
+  </div>
+</nav>
 
 <div class="reloj"><b>TEN EN CUENTA</b> La promo que sostiene estos precios se vende hasta el <strong>20 de agosto de 2026</strong>. Después, pregunta antes de cotizar.</div>
 
@@ -290,7 +342,7 @@
     </div>
   </div>
 
-<section>
+<section id="s01">
   <h2><span class="n">01</span>En 10 segundos</h2>
   <p class="lead">Un hotel <strong>pequeño y tranquilo de 284 suites, solo para adultos</strong>,
   con acceso directo a la playa. Y su gran ventaja: <strong>está pegado al Catalonia Bávaro Beach</strong>,
@@ -301,7 +353,7 @@
   aeropuerto.</div>
 </section>
 
-<section>
+<section id="s02">
   <h2><span class="n">02</span>A quién sí y a quién no</h2>
   <div class="rejilla dos">
     <div class="tarjeta">
@@ -332,7 +384,7 @@
   </div>
 </section>
 
-<section>
+<section id="s03">
   <h2><span class="n">03</span>Enséñaselo</h2>
   <p>Fotos reales del hotel. Para mandárselas al cliente, usa el enlace de la galería — <strong>ahí
   no hay ningún botón que se lleve tu venta.</strong></p>
@@ -354,7 +406,7 @@
   reconoces un espacio, no lo nombres.</p>
 </section>
 
-<section>
+<section id="s04">
   <h2><span class="n">04</span>Lo que entra en el plan</h2>
   <div class="rejilla dos">
     <div class="tarjeta">
@@ -391,7 +443,7 @@
     nacionales ilimitadas»</strong>. Si el cliente pregunta por marcas premium, dile que se lo
     confirmas — no lo prometas.
   </div>
-  <div class="banda ojo">
+  <div class="banda">
     <div class="t">Dos detalles que conviene explicar con precisión</div>
     <strong>El buceo es UNA clase de cortesía, en la piscina.</strong> No es buceo en el mar y no es
     ilimitado; el centro de buceo se paga aparte.<br><br>
@@ -400,7 +452,7 @@
   </div>
 </section>
 
-<section>
+<section id="s05">
   <h2><span class="n">05</span>Las habitaciones, y cómo subir de categoría</h2>
   <p>Vendemos <strong>6 de las 8 categorías</strong> del hotel. Estas son las 6, en orden de precio,
   de la más económica a la más alta:</p>
@@ -416,7 +468,7 @@
   </table>
   </div>
 
-  <div class="banda ojo">
+  <div class="banda">
     <div class="t">Tu argumento para subir de categoría — y cómo contarlo completo</div>
     Subir a <strong>Privileged</strong> le da a tu cliente: carné Privileged, <strong>zona de playa
     exclusiva con el Pure Chill Out Bar</strong>, cobertura nocturna, albornoz y pantuflas, entrada
@@ -436,7 +488,7 @@
     <strong>llega, lo busca y no lo tiene.</strong>
   </div>
 
-  <div class="banda alerta">
+  <div class="banda">
     <div class="t">Las Romance: sus extras piden mínimo 4 noches</div>
     Los extras de la Romance Deluxe (decoración especial, vino espumoso de bienvenida, cena
     romántica y masaje en pareja de 25 minutos) <strong>solo aplican con estancia mínima de 4
@@ -453,7 +505,7 @@
   </div>
 </section>
 
-<section>
+<section id="s06">
   <h2><span class="n">06</span>Lo que te van a preguntar</h2>
 
   <details><summary>¿Pueden ir niños?</summary>
@@ -528,7 +580,7 @@
   </details>
 </section>
 
-<section>
+<section id="s07">
   <h2><span class="n">07</span>Lo que no se promete</h2>
   <div class="tarjeta">
     <ul class="no">
@@ -551,7 +603,7 @@
   </div>
 </section>
 
-<section>
+<section id="s08">
   <h2><span class="n">08</span>Datos duros</h2>
   <div class="cifras">
     <div class="cifra"><b>284</b><span>suites · todas son suites</span></div>
@@ -568,7 +620,7 @@
   Las tarifas y la disponibilidad se confirman siempre al cotizar.</p>
 </section>
 
-<section>
+<section id="s09">
   <h2><span class="n">09</span>La familia Catalonia</h2>
   <p>Ocho propiedades Catalonia tienen página publicada. Conócelas: cada una tiene un cliente
   distinto, y saber cuál es cuál también es vender. <strong>Esta es la primera ficha de asesor;
@@ -666,7 +718,7 @@
   No se comparte con el cliente ni se publica fuera de la empresa.</div>
   <div style="margin-top:8px">Si un dato no cuadra con lo que te dice el cliente o el hotelero,
   avísale a Producto <strong>antes</strong> de prometerlo.</div>
-  <div style="margin-top:8px">Ficha v1 · 9 de agosto de 2026.</div>
+  <div style="margin-top:8px">Ficha v2 · 9 de agosto de 2026.</div>
 </footer>
 
 </div>
@@ -717,6 +769,73 @@
     if(e.key === 'ArrowLeft') abrir(i-1);
     if(e.key === 'ArrowRight') abrir(i+1);
   });
+})();
+</script>
+
+<script>
+/* ── EL INSTRUMENTO: cabina + spy + count-up ─────────────────
+   Todo se autogenera leyendo los h2: cero mantenimiento por ficha.
+   Si este script no corre, la ficha queda completa: los ids son
+   estaticos y los numeros finales viven en el HTML. */
+(function(){
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!('IntersectionObserver' in window)) return;
+
+  /* 1 · anclas 01–09 desde los h2 del documento */
+  var caja = document.getElementById('cab-anclas');
+  var secciones = Array.prototype.slice.call(document.querySelectorAll('section[id] h2 .n'))
+    .map(function(n){ return {num:n.textContent, sec:n.closest('section')}; });
+  secciones.forEach(function(s){
+    var a = document.createElement('a');
+    a.href = '#' + s.sec.id;
+    a.textContent = s.num;
+    a.setAttribute('data-s', s.num);
+    caja.appendChild(a);
+  });
+
+  /* 2 · la cabina aparece solo cuando el hero ya paso */
+  var cabina = document.getElementById('cabina');
+  new IntersectionObserver(function(es){
+    cabina.classList.toggle('fija', !es[0].isIntersecting);
+  }).observe(document.querySelector('.hero'));
+
+  /* 3 · spy: la seccion visible pinta su numero — cambia y ya, sin show */
+  var spy = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var num = e.target.querySelector('h2 .n').textContent;
+      var activa = null;
+      caja.querySelectorAll('a').forEach(function(a){
+        var es_esta = a.getAttribute('data-s') === num;
+        a.classList.toggle('activa', es_esta);
+        if(es_esta) activa = a;
+      });
+      /* en movil, el chip activo se trae a la vista dentro de su carril */
+      if(activa && caja.scrollWidth > caja.clientWidth){
+        caja.scrollLeft = activa.offsetLeft - caja.clientWidth/2 + activa.offsetWidth/2;
+      }
+    });
+  }, {rootMargin:'-15% 0px -70% 0px'});
+  secciones.forEach(function(s){ spy.observe(s.sec); });
+
+  /* 4 · count-up en Datos duros: una vez, 700ms, y el HTML ya trae el final */
+  if(!reduce){
+    var ioC = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        ioC.unobserve(e.target);
+        var m = e.target.textContent.match(/^(\d+)(.*)$/);
+        if(!m) return;
+        var fin = parseInt(m[1],10), suf = m[2], t0 = performance.now();
+        (function paso(t){
+          var p = Math.min((t - t0)/700, 1);
+          e.target.textContent = Math.round(fin*(1-Math.pow(1-p,3))) + suf;
+          if(p < 1) requestAnimationFrame(paso);
+        })(t0);
+      });
+    }, {threshold:.4});
+    document.querySelectorAll('.cifra b').forEach(function(b){ ioC.observe(b); });
+  }
 })();
 </script>
 
