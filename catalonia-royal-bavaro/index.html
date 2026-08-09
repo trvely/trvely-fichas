@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cómo vender · Catalonia Royal Bávaro · Trvely</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --burgundy:#B41241; --burgundy-osc:#8A0E32; --beige:#F4E5D2;
+    --tinta:#1E1A18; --gris:#6B625C; --linea:#E4D7C6; --papel:#FFFDFB;
+    --verde:#1F6F4A; --rojo:#B41241; --ambar:#8A6A1F;
+    --sombra:0 1px 2px rgba(30,26,24,.05), 0 8px 24px rgba(30,26,24,.06);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--beige);color:var(--tinta);
+       font-family:"Montserrat",-apple-system,"Segoe UI",Roboto,sans-serif;
+       font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .env{max-width:1080px;margin:0 auto;padding:0 20px}
+  img{max-width:100%;display:block}
+
+  /* ── aviso del reloj ──────────────────────────────────── */
+  .reloj{background:var(--burgundy-osc);color:#fff;font-size:13.5px;font-weight:700;
+         padding:10px 0;text-align:center;letter-spacing:.01em}
+  .reloj b{background:rgba(255,255,255,.18);padding:2px 9px;border-radius:99px;margin-right:6px}
+
+  /* ── portada ──────────────────────────────────────────── */
+  .portada{position:relative;background:#2A2422}
+  .portada img{width:100%;height:clamp(220px,42vw,440px);object-fit:cover}
+  header{background:var(--burgundy);color:#fff;padding:30px 0 26px}
+  .kicker{font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;opacity:.85;font-weight:800}
+  h1{font-size:clamp(30px,5.6vw,54px);line-height:1;margin:12px 0 8px;
+     font-weight:800;letter-spacing:-.015em;text-transform:uppercase}
+  .sub{font-size:clamp(15px,2.2vw,19px);opacity:.94;max-width:62ch;margin:0}
+  .sellos{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .sello{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.30);
+         padding:5px 12px;border-radius:99px;font-size:12.5px;font-weight:700}
+  .sello.duro{background:#fff;color:var(--burgundy);border-color:#fff}
+
+  /* ── bloques ──────────────────────────────────────────── */
+  section{padding:36px 0 6px;scroll-margin-top:12px}
+  h2{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--burgundy);
+     font-weight:800;margin:0 0 16px;padding-bottom:9px;border-bottom:2px solid var(--burgundy)}
+  h3{font-size:17px;margin:22px 0 8px;font-weight:800}
+  p{margin:0 0 12px;max-width:74ch}
+  .lead{font-size:19px;line-height:1.5;font-weight:600;max-width:66ch}
+
+  .tarjeta{background:var(--papel);border:1px solid var(--linea);border-radius:14px;
+           padding:20px 22px;margin-bottom:14px;box-shadow:var(--sombra)}
+  .rejilla{display:grid;gap:14px}
+  @media(min-width:760px){.rejilla.dos{grid-template-columns:1fr 1fr}}
+
+  ul{margin:0;padding-left:20px} li{margin-bottom:7px}
+  .si li::marker{color:var(--verde);font-size:1.1em}
+  .no li::marker{color:var(--rojo);font-size:1.1em}
+
+  .banda{border-left:4px solid var(--burgundy);background:#fff;padding:15px 18px;
+         border-radius:0 12px 12px 0;margin:16px 0;box-shadow:var(--sombra)}
+  .banda.alerta{border-left-color:var(--rojo);background:#FDF3F6}
+  .banda.ojo{border-left-color:var(--ambar);background:#FDF9EF}
+  .banda.bien{border-left-color:var(--verde);background:#F1F8F4}
+  .banda .t{font-weight:800;font-size:12px;letter-spacing:.09em;text-transform:uppercase;
+            margin-bottom:6px;color:var(--burgundy)}
+  .banda.alerta .t{color:var(--rojo)} .banda.ojo .t{color:var(--ambar)} .banda.bien .t{color:var(--verde)}
+
+  /* ── fotos ────────────────────────────────────────────── */
+  .tira{display:flex;gap:10px;overflow-x:auto;padding:4px 0 14px;scroll-snap-type:x mandatory}
+  .tira a{flex:0 0 auto;scroll-snap-align:start;border-radius:12px;overflow:hidden;
+          box-shadow:var(--sombra);line-height:0}
+  .tira img{width:clamp(180px,30vw,250px);height:clamp(120px,20vw,166px);object-fit:cover;
+            transition:transform .35s ease}
+  .tira a:hover img{transform:scale(1.05)}
+
+  /* ── tabla ────────────────────────────────────────────── */
+  .tabla-envoltura{overflow-x:auto;border-radius:14px;box-shadow:var(--sombra)}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;background:var(--papel);
+        border:1px solid var(--linea);border-radius:14px;overflow:hidden;min-width:520px}
+  th{background:#F9F1E6;text-align:left;padding:12px 13px;font-size:11.5px;
+     letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--linea)}
+  td{padding:12px 13px;border-bottom:1px solid var(--linea);vertical-align:top}
+  tr:last-child td{border-bottom:0}
+  .pill{display:inline-block;padding:3px 10px;border-radius:99px;font-size:11.5px;font-weight:800;
+        letter-spacing:.04em;white-space:nowrap}
+  .pill.si{background:#E7F2EC;color:var(--verde)}
+  .pill.nou{background:#FBE9EF;color:var(--rojo)}
+
+  /* ── desplegables ─────────────────────────────────────── */
+  details{background:var(--papel);border:1px solid var(--linea);border-radius:12px;
+          padding:14px 17px;margin-bottom:10px;box-shadow:var(--sombra)}
+  summary{cursor:pointer;font-weight:700;font-size:15.5px;list-style:none;
+          display:flex;align-items:flex-start;gap:10px}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"+";color:var(--burgundy);font-weight:800;font-size:19px;line-height:1.2;
+                  flex:0 0 auto}
+  details[open] summary::before{content:"–"}
+  details[open] summary{margin-bottom:10px;color:var(--burgundy)}
+  .guion{background:#F9F1E6;border-radius:10px;padding:13px 15px;margin-top:10px;
+         font-size:14.5px;font-style:italic;border-left:3px solid var(--burgundy)}
+  .guion::before{content:"Puedes decir";display:block;font-style:normal;font-size:10.5px;
+         letter-spacing:.12em;text-transform:uppercase;color:var(--gris);margin-bottom:6px;font-weight:800}
+
+  /* ── cifras ───────────────────────────────────────────── */
+  .cifras{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:11px}
+  .cifra{background:var(--papel);border:1px solid var(--linea);border-radius:14px;padding:16px;
+         box-shadow:var(--sombra)}
+  .cifra b{display:block;font-size:27px;line-height:1.1;color:var(--burgundy);font-weight:800}
+  .cifra span{font-size:12.5px;color:var(--gris)}
+
+  .enlaces{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+  .btn{display:inline-block;background:var(--burgundy);color:#fff;text-decoration:none;
+       padding:12px 20px;border-radius:99px;font-weight:700;font-size:14.5px;
+       transition:background .2s ease}
+  .btn:hover{background:var(--burgundy-osc)}
+  .btn.claro{background:#fff;color:var(--burgundy);border:2px solid var(--burgundy)}
+  .btn.claro:hover{background:#FBE9EF}
+
+  footer{margin-top:44px;padding:24px 0 44px;border-top:1px solid var(--linea);
+         font-size:12.5px;color:var(--gris)}
+  .fuente{font-size:12px;color:var(--gris);margin-top:8px;line-height:1.5}
+</style>
+</head>
+<body>
+
+<div class="reloj"><b>OJO</b> La promo que sostiene estos precios se vende hasta el <strong>20 de agosto de 2026</strong>. Después, pregunta antes de cotizar.</div>
+
+<div class="portada">
+  <img src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/hero/catalonia-royal-bavaro_hero.jpg" alt="Catalonia Royal Bávaro">
+</div>
+
+<header>
+  <div class="env">
+    <div class="kicker">Cómo vender · Ficha del asesor</div>
+    <h1>Catalonia<br>Royal Bávaro</h1>
+    <p class="sub">Todo incluido <strong>solo para adultos</strong>, en Cabeza de Toro, Punta Cana.
+    Pegado a un resort familiar gigante al que tu cliente entra con su pulsera.</p>
+    <div class="sellos">
+      <span class="sello duro">Solo adultos · 18+</span>
+      <span class="sello">284 suites</span>
+      <span class="sello">5 estrellas</span>
+      <span class="sello">Todo incluido</span>
+      <span class="sello">Punta Cana · 20 min del aeropuerto</span>
+    </div>
+  </div>
+</header>
+
+<div class="env">
+
+<section>
+  <h2>En 10 segundos</h2>
+  <p class="lead">Un hotel <strong>pequeño y tranquilo de 284 suites, solo para adultos</strong>,
+  con acceso directo a la playa. Y su gran ventaja: <strong>está pegado al Catalonia Bávaro Beach</strong>,
+  el resort familiar grande, y el plan incluye entrar allá — con su casino, su teatro al aire libre
+  y su discoteca.</p>
+  <div class="banda">
+    <div class="t">Tu frase de apertura</div>
+    Tienes el hotel pequeño y tranquilo para descansar, y cuando quieras ruido, el grande de al lado
+    con casino y shows. Sin niños, y a veinte minutos del aeropuerto.
+  </div>
+</section>
+
+<section>
+  <h2>A quién sí y a quién no</h2>
+  <div class="rejilla dos">
+    <div class="tarjeta">
+      <h3 style="margin-top:0">Se lo vendes a…</h3>
+      <ul class="si">
+        <li><strong>Parejas</strong> — el hotelero lo escribe así: pensado para parejas.</li>
+        <li><strong>Luna de miel y aniversarios</strong> — hay categorías Romance y amenidades de novios.</li>
+        <li><strong>Dos amigas o dos amigos</strong> que quieran descansar sin niños alrededor.</li>
+        <li>Quien quiera <strong>tranquilidad con la fiesta al lado</strong>, no dentro.</li>
+        <li>A quien le guste el <strong>golf</strong>: el plan trae una clase y un Green Fee al día.</li>
+      </ul>
+    </div>
+    <div class="tarjeta">
+      <h3 style="margin-top:0">No se lo vendes a…</h3>
+      <ul class="no">
+        <li><strong>Familias con niños. Nunca.</strong> Es 18+ sin excepción — no los admiten.</li>
+        <li>Grupos de <strong>más de 3 personas por habitación</strong>: el máximo que vendemos es 3.</li>
+        <li>Quien quiera <strong>resort gigante con mil cosas dentro</strong>: son 284 suites.</li>
+        <li>Quien viaje <strong>por el buceo</strong>: aquí es una clase en la piscina (ver abajo).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="banda alerta">
+    <div class="t">El filtro que arruina una venta entera</div>
+    Pregunta por las edades <strong>antes de cotizar</strong>. Si viaja un menor de 18, este hotel
+    queda descartado y hay que mover al cliente al <strong>Catalonia Bávaro Beach</strong>, que es
+    el familiar de al lado.
+  </div>
+</section>
+
+<section>
+  <h2>Enséñaselo</h2>
+  <p>Fotos reales del hotel. Para mandárselas al cliente, usa el enlace de la galería — <strong>ahí
+  no hay ningún botón que se lleve tu venta.</strong></p>
+  <div class="tira">
+    <a href="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/full/catalonia-royal-bavaro_003.jpg" target="_blank" rel="noopener"><img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_003.jpg" alt="Catalonia Royal Bávaro"></a>
+    <a href="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/full/catalonia-royal-bavaro_007.jpg" target="_blank" rel="noopener"><img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_007.jpg" alt="Catalonia Royal Bávaro"></a>
+    <a href="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/full/catalonia-royal-bavaro_012.jpg" target="_blank" rel="noopener"><img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_012.jpg" alt="Catalonia Royal Bávaro"></a>
+    <a href="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/full/catalonia-royal-bavaro_018.jpg" target="_blank" rel="noopener"><img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_018.jpg" alt="Catalonia Royal Bávaro"></a>
+    <a href="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/full/catalonia-royal-bavaro_024.jpg" target="_blank" rel="noopener"><img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_024.jpg" alt="Catalonia Royal Bávaro"></a>
+    <a href="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/full/catalonia-royal-bavaro_031.jpg" target="_blank" rel="noopener"><img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_031.jpg" alt="Catalonia Royal Bávaro"></a>
+    <a href="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/full/catalonia-royal-bavaro_038.jpg" target="_blank" rel="noopener"><img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_038.jpg" alt="Catalonia Royal Bávaro"></a>
+    <a href="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/full/catalonia-royal-bavaro_044.jpg" target="_blank" rel="noopener"><img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_044.jpg" alt="Catalonia Royal Bávaro"></a>
+  </div>
+  <div class="enlaces">
+    <a class="btn" href="https://galerias.trvely.com.co/catalonia-royal-bavaro/" target="_blank" rel="noopener">Galería completa — 44 fotos</a>
+  </div>
+  <p class="fuente"><strong>Este es el enlace que le mandas al cliente.</strong> No le mandes la
+  página pública del hotel: ahí hay un canal de contacto de la empresa, y el cliente que trabajaste
+  tú puede terminar comprándole a otro.<br>
+  Las fotos no llevan pie porque todavía no está registrado qué espacio muestra cada una. Si no
+  reconoces un espacio, no lo nombres.</p>
+</section>
+
+<section>
+  <h2>Lo que entra en el plan</h2>
+  <div class="rejilla dos">
+    <div class="tarjeta">
+      <h3 style="margin-top:0">Incluido</h3>
+      <ul class="si">
+        <li>Buffet <strong>Thalassa</strong> y restaurantes a la carta</li>
+        <li><strong>Bebidas nacionales ilimitadas</strong> (ver la trampa abajo)</li>
+        <li>Actividades diarias y <strong>acceso a la discoteca</strong></li>
+        <li>Aeróbicos, vóley, tenis y clases de baile</li>
+        <li><strong>Deportes náuticos sin motor</strong>: snorkel, kayak y catamarán</li>
+        <li><strong>1 clase de golf y 1 Green Fee al día</strong></li>
+        <li>Una clase de buceo <strong>de cortesía, en la piscina</strong></li>
+        <li>Gimnasio, wifi y toallas de playa</li>
+        <li><strong>Room service 24 horas, en todas las habitaciones</strong></li>
+        <li><strong>Acceso a las instalaciones del Catalonia Bávaro Beach</strong></li>
+        <li>Todos los impuestos</li>
+      </ul>
+    </div>
+    <div class="tarjeta">
+      <h3 style="margin-top:0">Se paga aparte — dilo tú antes</h3>
+      <ul class="no">
+        <li>El <strong>Alegría Spa</strong> (baño turco, jacuzzi, tratamientos de pareja)</li>
+        <li>El <strong>centro de buceo</strong></li>
+        <li>El <strong>Pearl Beach Club</strong></li>
+        <li>Bodas y servicios de eventos</li>
+        <li>Lavandería, asistencia médica, alquiler de auto y tienda de regalos</li>
+      </ul>
+    </div>
+  </div>
+  <div class="banda alerta">
+    <div class="t">La trampa de las bebidas</div>
+    El folleto del hotel dice «nacionales e internacionales». <strong>Nuestro contrato dice
+    nacionales.</strong> El que responde en el mostrador es el contrato: <strong>vende «bebidas
+    nacionales ilimitadas»</strong>. Si el cliente pregunta por marcas premium, dile que se lo
+    confirmas — no lo prometas.
+  </div>
+  <div class="banda ojo">
+    <div class="t">Dos que suenan más grandes de lo que son</div>
+    <strong>El buceo es UNA clase de cortesía, en la piscina.</strong> No es buceo en el mar y no es
+    ilimitado; el centro de buceo se paga aparte.<br><br>
+    <strong>El Green Fee de golf no dice en qué campo</strong>, y no está confirmado si el
+    transporte va incluido. Véndelo como «una clase y un Green Fee al día», sin nombrar campo.
+  </div>
+</section>
+
+<section>
+  <h2>Las habitaciones, y cómo subir de categoría</h2>
+  <p>Vendemos <strong>6 de las 8 categorías</strong> del hotel. Estas son las 6, en orden de precio,
+  de la más económica a la más alta:</p>
+  <div class="tabla-envoltura">
+  <table>
+    <tr><th>Categoría</th><th>Para quién</th><th>¿Privileged?</th></tr>
+    <tr><td><strong>Junior Suite Superior</strong><br><span style="color:var(--gris);font-size:13px">La de entrada</span></td><td>2 a 3 adultos</td><td><span class="pill nou">NO</span></td></tr>
+    <tr><td><strong>Premium Junior Suite</strong></td><td>2 a 3 adultos</td><td><span class="pill nou">NO</span></td></tr>
+    <tr><td>Privileged Deluxe Junior Suite</td><td>2 a 3 adultos · cerca de la playa</td><td><span class="pill si">SÍ</span></td></tr>
+    <tr><td>Privileged Deluxe &amp; Swimming Pool</td><td>2 a 3 adultos · <strong>piscina privada</strong> con acceso desde la terraza</td><td><span class="pill si">SÍ</span></td></tr>
+    <tr><td>Privileged Duplex Suite &amp; Swimming Pool</td><td>2 a 3 adultos · dos plantas · <strong>piscina infinita privada</strong> y jardín</td><td><span class="pill si">SÍ</span></td></tr>
+    <tr><td>Privileged Romance Deluxe Junior Suite</td><td><strong>Solo 2 adultos</strong> · terraza con vista al lago</td><td><span class="pill si">SÍ</span></td></tr>
+  </table>
+  </div>
+
+  <div class="banda ojo">
+    <div class="t">Tu argumento de upgrade — y su letra pequeña</div>
+    Subir a <strong>Privileged</strong> le da a tu cliente: carné Privileged, <strong>zona de playa
+    exclusiva con el Pure Chill Out Bar</strong>, cobertura nocturna, albornoz y pantuflas, entrada
+    temprana y salida hasta las 3 p. m. sujeta a disponibilidad, y <strong>una</strong> entrada a
+    las zonas húmedas del spa.<br><br>
+    <strong>Pero di la verdad completa:</strong> el spa, las cenas románticas y las tiendas son
+    <strong>10 % de descuento, no gratis</strong>. La entrada al spa es <strong>una</strong> y está
+    sujeta a disponibilidad. De todo el paquete Privileged, lo que de verdad «se tiene» son el
+    carné, la playa exclusiva y las amenidades de habitación.
+  </div>
+
+  <div class="banda alerta">
+    <div class="t">Lo que más se equivoca: las dos más baratas NO son Privileged</div>
+    La <strong>Junior Suite Superior</strong> y la <strong>Premium Junior Suite</strong> no tienen
+    beneficios Privileged — y son justamente por las que entra la mayoría de los clientes.
+    Si tu cliente compra una de esas dos y tú le prometiste la playa exclusiva o el bar Privileged,
+    <strong>llega, lo busca y no lo tiene.</strong>
+  </div>
+
+  <div class="banda alerta">
+    <div class="t">Las Romance exigen 4 noches</div>
+    Los extras de la Romance Deluxe (decoración especial, vino espumoso de bienvenida, cena
+    romántica y masaje en pareja de 25 minutos) <strong>solo aplican con estancia mínima de 4
+    noches</strong>. Con 3 noches, no aplican. Y hay que <strong>avisar la hora de llegada al
+    reservar</strong> para la amenidad de bienvenida.
+  </div>
+
+  <div class="banda">
+    <div class="t">Dos categorías que existen y NO puedes vender</div>
+    La <strong>Privileged Suite</strong> y la <strong>Privileged Presidential Ocean Front Suite</strong>
+    aparecen en el folleto del hotel, pero <strong>no están en nuestro contrato</strong>: no tienen
+    tarifa y no se pueden cotizar. Si el cliente las vio por internet, dile que le buscas
+    disponibilidad — no las ofrezcas.
+  </div>
+</section>
+
+<section>
+  <h2>Lo que te van a preguntar</h2>
+
+  <details><summary>¿Pueden ir niños?</summary>
+    <p><strong>No. Es solo adultos, mínimo 18 años, sin excepción.</strong> Este es el filtro más
+    importante del hotel y hay que ponerlo temprano en la conversación.</p>
+    <div class="guion">Este hotel es solo de adultos, desde los 18 años. Si viajan con niños te
+    recomiendo el Catalonia Bávaro Beach, que está justo al lado y sí es familiar — y te lo cotizo
+    ahora mismo.</div>
+  </details>
+
+  <details><summary>¿Tiene casino? ¿Y discoteca?</summary>
+    <p>Sí, pero <strong>no son de este hotel: son del Catalonia Bávaro Beach, el de al lado</strong>,
+    y el plan incluye el acceso. Se dice «acceso», nunca «nuestro casino». Un cliente que reserva
+    por el casino y descubre que hay que caminar al hotel vecino tiene queja legítima.</p>
+    <div class="guion">El casino, el teatro al aire libre y la discoteca están en el hotel de al
+    lado, y tu plan incluye entrar con tu pulsera. Tienes la tranquilidad aquí y el movimiento allá
+    cuando quieras.</div>
+  </details>
+
+  <details><summary>¿De verdad puedo usar el hotel de al lado?</summary>
+    <p>Sí. El documento de este hotel promete <strong>acceso a las instalaciones del Catalonia
+    Bávaro Beach</strong>, con sus restaurantes. <strong>Pero es en un solo sentido</strong>:
+    nuestros huéspedes van allá; no está documentado que los de allá vengan aquí.</p>
+    <p><strong>Y un aviso:</strong> de los 6 bares del vecino, el <strong>Pure Chill Out Bar es solo
+    para Privileged</strong>. No prometas «todos sus bares».</p>
+    <div class="guion">Tu plan incluye entrar al hotel vecino, así que sumas sus restaurantes a los
+    tuyos. Uno de sus bares es exclusivo de una categoría superior; el resto los tienes.</div>
+  </details>
+
+  <details><summary>¿Cuántos restaurantes tiene?</summary>
+    <p><strong>Cuatro puntos de comida propios, y de mantel son tres:</strong> Thalassa (buffet),
+    BLoved (internacional, a la carta), Seablue (mariscos, a la carta) y La Isla (snacks y pizzas
+    junto a la piscina). Más los del hotel de al lado.</p>
+    <p>Los de <strong>a la carta exigen reserva</strong> y están sujetos a disponibilidad. En
+    interiores hay código de vestimenta <em>smart casual</em>.</p>
+    <div class="guion">Tiene cuatro puntos de comida propios, tres de ellos para sentarse a cenar, y
+    además entras a los del hotel vecino. Los a la carta se reservan al llegar.</div>
+  </details>
+
+  <details><summary>¿Cuántas piscinas?</summary>
+    <p><strong>Dos</strong>: una infinita con jacuzzi y otra con el bar dentro del agua
+    (<em>Margaritas</em>). Las piscinas privadas de la Deluxe &amp; Pool y de la Duplex
+    <strong>son de la habitación</strong> y no se suman al conteo del hotel.</p>
+  </details>
+
+  <details><summary>¿Cuántas estrellas tiene?</summary>
+    <p><strong>Cinco.</strong> Aquí sí puedes decirlo: lo dice el propio documento del hotel.
+    (Ojo: en otros Catalonia no es así — no lo des por hecho en los demás.)</p>
+  </details>
+
+  <details><summary>¿Cuánto se demora del aeropuerto?</summary>
+    <p><strong>16 kilómetros del aeropuerto de Punta Cana, 20 minutos.</strong> Aquí el tiempo sí
+    está confirmado por el hotel. También está a 15 minutos del centro de Punta Cana y a 2 horas de
+    Santo Domingo.</p>
+    <div class="guion">Estás a veinte minutos del aeropuerto de Punta Cana. El traslado te lo
+    organizamos nosotros.</div>
+  </details>
+
+  <details><summary>¿Cuántos metros tiene la habitación?</summary>
+    <p><strong>No lo sabemos y no se inventa.</strong> El documento del hotel no da la superficie de
+    ninguna habitación. Lo único con metro cuadrado es la piscina privada de la Duplex.</p>
+    <div class="guion">Te paso las fotos y lo que incluye cada categoría. La medida exacta te la
+    confirmo con el hotel si es importante para tu decisión.</div>
+  </details>
+
+  <details><summary>¿Y si me piden luna de miel?</summary>
+    <p>Hay amenidades de novios: decoración romántica y vino espumoso a la llegada.
+    <strong>Hay que escribir «honeymoon» en la reserva</strong> — si no se escribe, no llega.
+    Es un dato que vende y cuesta cero.</p>
+    <div class="guion">Si me confirmas que es luna de miel, lo dejo anotado en la reserva para que
+    les preparen la habitación con decoración y vino espumoso a la llegada.</div>
+  </details>
+</section>
+
+<section>
+  <h2>Errores que no puedes cometer</h2>
+  <div class="tarjeta">
+    <ul class="no">
+      <li><strong>Vendérselo a una familia con niños.</strong> Es 18+. No hay excepción, no hay
+      cuna, no hay Kids Club.</li>
+      <li><strong>Prometer beneficios Privileged a quien compra las dos categorías más baratas.</strong>
+      Es el error más caro de esta ficha.</li>
+      <li><strong>Decir «nuestro casino» o «nuestra discoteca».</strong> Son del hotel de al lado.</li>
+      <li><strong>Vender «buceo incluido».</strong> Es una clase de cortesía en la piscina.</li>
+      <li><strong>Decir «campo de golf del hotel».</strong> El documento no nombra ningún campo.</li>
+      <li><strong>Prometer bebidas internacionales.</strong> El contrato dice nacionales.</li>
+      <li><strong>Hablar de playa con Bandera Azul.</strong> Eso es del Catalonia Bayahíbe, no de
+      este hotel.</li>
+      <li><strong>Inventar metros de habitación</strong> o copiarlos de otro hotel de la cadena.</li>
+      <li><strong>Ofrecer la Privileged Suite o la Presidential.</strong> No están en contrato.</li>
+      <li><strong>Dar el teléfono de la ficha del hotel:</strong> es el mismo del hotel vecino. Si
+      el cliente lo necesita, pídelo a Producto.</li>
+      <li><strong>Prometer albornoz y pantuflas</strong> como beneficio exclusivo: el documento se
+      contradice y está en consulta.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Datos duros</h2>
+  <div class="cifras">
+    <div class="cifra"><b>284</b><span>suites · todas son suites</span></div>
+    <div class="cifra"><b>18+</b><span>solo adultos, sin excepción</span></div>
+    <div class="cifra"><b>6</b><span>categorías que vendemos, de 8</span></div>
+    <div class="cifra"><b>2</b><span>piscinas · infinita y swim-up</span></div>
+    <div class="cifra"><b>4</b><span>puntos de comida · 3 de mantel</span></div>
+    <div class="cifra"><b>3</b><span>bares propios</span></div>
+    <div class="cifra"><b>16 km</b><span>del aeropuerto de Punta Cana · 20 min</span></div>
+    <div class="cifra"><b>3</b><span>personas máximo por habitación</span></div>
+  </div>
+  <p class="fuente">Fuente: Fact Sheet oficial del hotel (14 páginas), contrato TARIFARIO 2026-27
+  LATAM RD y verificación en nuestros sistemas.
+  Las tarifas y la disponibilidad se confirman siempre al cotizar.</p>
+</section>
+
+<section>
+  <h2>Para trabajar</h2>
+  <div class="enlaces">
+    <a class="btn" href="https://galerias.trvely.com.co/catalonia-royal-bavaro/" target="_blank" rel="noopener">Galería para el cliente</a>
+    <a class="btn claro" href="https://galerias.trvely.com.co/" target="_blank" rel="noopener">Todas las galerías</a>
+  </div>
+  <div class="banda alerta" style="margin-top:18px">
+    <div class="t">La regla que protege tu comisión</div>
+    <strong>Nunca le mandes al cliente la página pública del hotel.</strong> Esa página tiene el
+    canal de contacto de la empresa: el cliente que tú trabajaste durante semanas puede escribir
+    por ahí y <strong>la venta se la lleva otro</strong>.<br><br>
+    Para enseñarle el hotel, usa <strong>la galería</strong>. No tiene botón de venta — por eso
+    existe. Todo lo demás, se lo explicas tú.
+  </div>
+</section>
+
+<footer>
+  <div><strong>Trvely · Área de Producto</strong> — material interno de apoyo comercial.
+  No se comparte con el cliente ni se publica fuera de la empresa.</div>
+  <div style="margin-top:8px">Si un dato no cuadra con lo que te dice el cliente o el hotelero,
+  avísale a Producto <strong>antes</strong> de prometerlo. Es más barato preguntar que corregir.</div>
+  <div style="margin-top:8px">Ficha v1 · 9 de agosto de 2026.</div>
+</footer>
+
+</div>
+</body>
+</html>

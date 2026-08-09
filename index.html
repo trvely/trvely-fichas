@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Fichas de venta · Trvely · Área de Producto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --burgundy:#B41241; --burgundy-osc:#8A0E32; --beige:#F4E5D2;
+    --tinta:#1E1A18; --gris:#6B625C; --linea:#E4D7C6; --papel:#FFFDFB;
+    --sombra:0 1px 2px rgba(30,26,24,.05), 0 8px 24px rgba(30,26,24,.06);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--beige);color:var(--tinta);
+       font-family:"Montserrat",-apple-system,"Segoe UI",Roboto,sans-serif;
+       font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .env{max-width:1080px;margin:0 auto;padding:0 20px}
+  img{max-width:100%;display:block}
+
+  header{background:var(--burgundy);color:#fff;padding:44px 0 38px}
+  .kicker{font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;opacity:.85;font-weight:800}
+  h1{font-size:clamp(32px,6vw,56px);line-height:1;margin:12px 0 10px;
+     font-weight:800;letter-spacing:-.015em;text-transform:uppercase}
+  .sub{font-size:clamp(15px,2.2vw,19px);opacity:.94;max-width:60ch;margin:0}
+
+  section{padding:38px 0 6px}
+  h2{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--burgundy);
+     font-weight:800;margin:0 0 16px;padding-bottom:9px;border-bottom:2px solid var(--burgundy)}
+
+  .fichas{display:grid;gap:16px;grid-template-columns:1fr}
+  @media(min-width:720px){.fichas{grid-template-columns:1fr 1fr}}
+  .ficha{background:var(--papel);border:1px solid var(--linea);border-radius:16px;
+         overflow:hidden;box-shadow:var(--sombra);text-decoration:none;color:inherit;
+         display:flex;flex-direction:column;transition:transform .25s ease, box-shadow .25s ease}
+  .ficha:hover{transform:translateY(-3px);box-shadow:0 4px 8px rgba(30,26,24,.07), 0 16px 40px rgba(30,26,24,.10)}
+  .ficha img{width:100%;height:170px;object-fit:cover}
+  .ficha .cuerpo{padding:18px 20px 20px}
+  .ficha h3{margin:0 0 6px;font-size:20px;font-weight:800;letter-spacing:-.01em}
+  .ficha p{margin:0;font-size:14px;color:var(--gris)}
+  .etiquetas{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+  .et{background:#F9F1E6;border:1px solid var(--linea);padding:3px 10px;border-radius:99px;
+      font-size:11.5px;font-weight:700;color:var(--burgundy)}
+
+  .banda{border-left:4px solid var(--burgundy);background:#fff;padding:16px 19px;
+         border-radius:0 12px 12px 0;margin:18px 0;box-shadow:var(--sombra)}
+  .banda.alerta{border-left-color:var(--burgundy);background:#FDF3F6}
+  .banda .t{font-weight:800;font-size:12px;letter-spacing:.09em;text-transform:uppercase;
+            margin-bottom:6px;color:var(--burgundy)}
+
+  footer{margin-top:44px;padding:24px 0 44px;border-top:1px solid var(--linea);
+         font-size:12.5px;color:var(--gris)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="env">
+    <div class="kicker">Trvely · Área de Producto</div>
+    <h1>Fichas<br>de venta</h1>
+    <p class="sub">Cómo vender cada hotel. Lo que incluye, a quién le sirve, qué te van a preguntar
+    y qué no puedes prometer.</p>
+  </div>
+</header>
+
+<div class="env">
+
+<section>
+  <h2>Hoteles</h2>
+  <div class="fichas">
+
+    <a class="ficha" href="catalonia-royal-bavaro/">
+      <img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_003.jpg" alt="Catalonia Royal Bávaro">
+      <div class="cuerpo">
+        <h3>Catalonia Royal Bávaro</h3>
+        <p>Punta Cana, República Dominicana</p>
+        <div class="etiquetas">
+          <span class="et">Solo adultos 18+</span>
+          <span class="et">284 suites</span>
+          <span class="et">Todo incluido</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section>
+  <h2>Cómo se usa</h2>
+  <div class="banda alerta">
+    <div class="t">La regla que protege tu comisión</div>
+    <strong>Nunca le mandes al cliente la página pública del hotel.</strong> Esa página tiene el
+    canal de contacto de la empresa: el cliente que tú trabajaste durante semanas puede escribir por
+    ahí y <strong>la venta se la lleva otro</strong>.<br><br>
+    Para enseñarle el hotel, usa <strong>la galería</strong> que enlaza cada ficha. No tiene botón
+    de venta — por eso existe. Todo lo demás, se lo explicas tú.
+  </div>
+  <div class="banda">
+    <div class="t">Si un dato no cuadra</div>
+    Avísale a Producto <strong>antes</strong> de prometerlo. Es más barato preguntar que corregir.
+  </div>
+</section>
+
+<footer>
+  <div><strong>Trvely · Área de Producto</strong> — material interno de apoyo comercial.
+  No se comparte con el cliente ni se publica fuera de la empresa.</div>
+</footer>
+
+</div>
+</body>
+</html>
