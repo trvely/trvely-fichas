@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#870D31">
 <title>Cómo vender · Catalonia Royal Bávaro · Trvely</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -269,8 +270,10 @@
   /* ── footer ────────────────────────────────────────────── */
   footer{margin-top:46px;padding:30px 0 50px;border-top:1px solid var(--linea);
          font-size:12.5px;color:var(--gris)}
-  .firma{font-family:"White Star","Montserrat",cursive;font-size:38px;color:var(--burgundy);
-         margin-bottom:14px}
+
+  /* foco visible de marca: un asesor tambien navega con Tab */
+  a:focus-visible,summary:focus-visible,button:focus-visible{
+    outline:2px solid var(--burgundy);outline-offset:2px;border-radius:4px}
 
   /* ── móvil ─────────────────────────────────────────────── */
   @media(max-width:640px){
@@ -278,14 +281,13 @@
     .hero{border-radius:28px;height:clamp(360px,62vh,480px)}
     .ibar{margin:-46px 10px 0;padding:20px 24px;gap:16px 26px;border-radius:26px}
     .mentora{align-items:flex-start}
-    .tira-nota{font-size:12px}
     .cab-env{gap:10px;padding:0 12px}
-    .cab-nombre{font-size:12.5px;overflow:hidden;text-overflow:ellipsis}
     /* en pantalla estrecha cae el prefijo de cadena: «Royal Bávaro» distingue; «Catalonia Ro…» no.
        flex-shrink:0 → el que cede es el carril de chips (que ya sabe hacer scroll), no el nombre;
        max-width:55% + ellipsis quedan de tope de seguridad para nombres extremos */
     .cab-marca{display:none}
-    .cab-nombre{flex-shrink:0;max-width:55%}
+    .cab-nombre{font-size:12.5px;overflow:hidden;text-overflow:ellipsis;
+        flex-shrink:0;max-width:55%}
   }
 
   /* ── accesibilidad: sin movimiento, la ficha sigue entera ─ */
@@ -398,14 +400,14 @@
   <p>Fotos reales del hotel. Para mandárselas al cliente, usa el enlace de la galería — <strong>está
   diseñada para que tú mantengas el acompañamiento comercial.</strong></p>
   <div class="gal" id="galeria">
-    <a href="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/full/catalonia-royal-bavaro_003.jpg"><img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_003.jpg" alt="Catalonia Royal Bávaro"></a>
-    <a href="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/full/catalonia-royal-bavaro_007.jpg"><img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_007.jpg" alt="Catalonia Royal Bávaro"></a>
-    <a href="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/full/catalonia-royal-bavaro_012.jpg"><img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_012.jpg" alt="Catalonia Royal Bávaro"></a>
-    <a href="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/full/catalonia-royal-bavaro_018.jpg"><img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_018.jpg" alt="Catalonia Royal Bávaro"></a>
-    <a href="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/full/catalonia-royal-bavaro_024.jpg"><img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_024.jpg" alt="Catalonia Royal Bávaro"></a>
-    <a href="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/full/catalonia-royal-bavaro_031.jpg"><img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_031.jpg" alt="Catalonia Royal Bávaro"></a>
-    <a href="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/full/catalonia-royal-bavaro_038.jpg"><img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_038.jpg" alt="Catalonia Royal Bávaro"></a>
-    <a href="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/full/catalonia-royal-bavaro_044.jpg"><img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_044.jpg" alt="Catalonia Royal Bávaro"></a>
+    <a href="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/full/catalonia-royal-bavaro_003.jpg"><img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_003.jpg" alt="Catalonia Royal Bávaro — foto 1 de 8"></a>
+    <a href="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/full/catalonia-royal-bavaro_007.jpg"><img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_007.jpg" alt="Catalonia Royal Bávaro — foto 2 de 8"></a>
+    <a href="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/full/catalonia-royal-bavaro_012.jpg"><img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_012.jpg" alt="Catalonia Royal Bávaro — foto 3 de 8"></a>
+    <a href="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/full/catalonia-royal-bavaro_018.jpg"><img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_018.jpg" alt="Catalonia Royal Bávaro — foto 4 de 8"></a>
+    <a href="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/full/catalonia-royal-bavaro_024.jpg"><img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_024.jpg" alt="Catalonia Royal Bávaro — foto 5 de 8"></a>
+    <a href="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/full/catalonia-royal-bavaro_031.jpg"><img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_031.jpg" alt="Catalonia Royal Bávaro — foto 6 de 8"></a>
+    <a href="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/full/catalonia-royal-bavaro_038.jpg"><img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_038.jpg" alt="Catalonia Royal Bávaro — foto 7 de 8"></a>
+    <a href="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/full/catalonia-royal-bavaro_044.jpg"><img loading="lazy" src="https://pub-9547b1fe952748f8b06f7eaa652e62fa.r2.dev/hoteles/punta-cana/catalonia-royal-bavaro/thumb/catalonia-royal-bavaro_044.jpg" alt="Catalonia Royal Bávaro — foto 8 de 8"></a>
   </div>
   <p class="fuente" style="margin-top:14px"><strong>Este es el enlace que le mandas al cliente:</strong>
   <a href="https://galerias.trvely.com.co/catalonia-royal-bavaro/" target="_blank" rel="noopener">galerias.trvely.com.co/catalonia-royal-bavaro</a> — 44 fotos.
@@ -505,8 +507,8 @@
     <div class="t">Las Romance: sus extras piden mínimo 4 noches</div>
     Los extras de la Romance Deluxe (decoración especial, vino espumoso de bienvenida, cena
     romántica y masaje en pareja de 25 minutos) <strong>solo aplican con estancia mínima de 4
-    noches</strong>. Con 3 noches, no aplican. Y hay que <strong>avisar la hora de llegada al
-    reservar</strong> para la amenidad de bienvenida.
+    noches</strong>. Con 3 noches, no aplican. Y <strong>avisa la hora de llegada al
+    reservar</strong>: así la amenidad de bienvenida llega a tiempo.
   </div>
 
   <div class="banda">
@@ -522,8 +524,8 @@
   <h2><span class="n">06</span>Lo que te van a preguntar</h2>
 
   <details><summary>¿Pueden ir niños?</summary>
-    <p><strong>No. Es solo adultos, mínimo 18 años, sin excepción.</strong> Este es el filtro más
-    importante del hotel y hay que ponerlo temprano en la conversación.</p>
+    <p><strong>No. Es solo adultos, mínimo 18 años, sin excepción.</strong> Es el filtro más
+    importante del hotel: ponlo temprano en la conversación.</p>
     <div class="guion">Este hotel es solo de adultos, desde los 18 años. Si viajan con niños te
     recomiendo el Catalonia Bávaro Beach, que está justo al lado y sí es familiar — y te lo cotizo
     ahora mismo.</div>
@@ -589,7 +591,7 @@
 
   <details><summary>¿Y si me piden luna de miel?</summary>
     <p>Hay amenidades de novios: decoración romántica y vino espumoso a la llegada.
-    <strong>Hay que escribir «honeymoon» en la reserva</strong> — si no se escribe, no llega.
+    <strong>Escribe «honeymoon» en la reserva</strong> — si no queda escrito, no llega.
     Es un dato que vende y cuesta cero.</p>
     <div class="guion">Si me confirmas que es luna de miel, lo dejo anotado en la reserva para que
     les preparen la habitación con decoración y vino espumoso a la llegada.</div>
@@ -606,7 +608,7 @@
       cuna ni Kids Club: su valor es justamente ese. Para familias, la recomendación es el Bávaro
       Beach.</li>
       <li><strong>Beneficios Privileged en las dos categorías de entrada.</strong> No los incluyen:
-      preséntalas por lo que sí ofrecen. Es la precisión más valiosa de esta ficha.</li>
+      preséntalas por lo que sí ofrecen. El detalle completo está en la sección 05.</li>
       <li><strong>«Nuestro casino» o «nuestra discoteca».</strong> Son del hotel de al lado; la
       palabra exacta es «acceso» — y dicha a tiempo, es una ventaja.</li>
       <li><strong>«Buceo incluido».</strong> Lo incluido es una clase de cortesía en la piscina; el
@@ -632,7 +634,7 @@
 <section id="s08">
   <h2><span class="n">08</span>Datos duros</h2>
   <div class="cifras">
-    <div class="cifra"><b>284</b><span>suites · todas son suites</span></div>
+    <div class="cifra"><b>284</b><span>suites · todas las habitaciones lo son</span></div>
     <div class="cifra"><b>18+</b><span>solo adultos, sin excepción</span></div>
     <div class="cifra"><b>6</b><span>categorías que vendemos, de 8</span></div>
     <div class="cifra"><b>2</b><span>piscinas · infinita y swim-up</span></div>
@@ -665,7 +667,7 @@
       <div>
         <div class="nom">Catalonia Bávaro Beach</div>
         <div class="pais">Punta Cana · República Dominicana</div>
-        <div class="nota">El vecino familiar de este hotel — tu plan B cuando viajan niños.</div>
+        <div class="nota">El vecino familiar de este hotel — tu recomendación cuando viajan niños.</div>
       </div>
       <span class="prox">Ficha en camino</span>
     </div>
@@ -746,13 +748,13 @@
   No se comparte con el cliente ni se publica fuera de la empresa.</div>
   <div style="margin-top:8px">Si un dato no cuadra con lo que te dice el cliente o el hotelero,
   avísale a Producto <strong>antes</strong> de prometerlo.</div>
-  <div style="margin-top:8px">Ficha v3 · 9 de agosto de 2026.</div>
+  <div style="margin-top:8px">Ficha v4 · 9 de agosto de 2026 · Molde de la familia.</div>
 </footer>
 
 </div>
 
-<div class="lbx" id="lbx" role="dialog" aria-label="Foto ampliada">
-  <img id="lbx-img" src="" alt="Catalonia Royal Bávaro — foto ampliada">
+<div class="lbx" id="lbx" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <img id="lbx-img" alt="Catalonia Royal Bávaro — foto ampliada">
   <button class="ant" id="lbx-ant" aria-label="Anterior">‹</button>
   <button class="sig" id="lbx-sig" aria-label="Siguiente">›</button>
   <button class="cerrar" id="lbx-cerrar" aria-label="Cerrar">×</button>
@@ -762,18 +764,23 @@
 <script>
 (function(){
   var enlaces = Array.prototype.slice.call(document.querySelectorAll('#galeria a'));
-  var fulls = enlaces.map(function(a){ return a.href; });
   var lbx = document.getElementById('lbx');
+  /* MOLDE: si una ficha futura no trae galeria (o no trae lightbox), aqui no pasa nada */
+  if(!enlaces.length || !lbx) return;
+  var fulls = enlaces.map(function(a){ return a.href; });
   var img = document.getElementById('lbx-img');
   var cuenta = document.getElementById('lbx-cuenta');
   var i = 0;
 
   function abrir(n){
+    var recienAbierta = !lbx.classList.contains('abierta');
     i = (n + fulls.length) % fulls.length;
     img.src = fulls[i];
     cuenta.textContent = (i+1) + ' / ' + fulls.length;
     lbx.classList.add('abierta');
     document.body.style.overflow = 'hidden';
+    /* al abrir con teclado, el foco entra al dialogo (solo la primera vez, no en cada flecha) */
+    if(recienAbierta) document.getElementById('lbx-cerrar').focus();
   }
   function cerrar(){
     lbx.classList.remove('abierta');
@@ -811,6 +818,10 @@
 
   /* 1 · anclas 01–09 desde los h2 del documento */
   var caja = document.getElementById('cab-anclas');
+  var cabina = document.getElementById('cabina');
+  var hero = document.querySelector('.hero');
+  /* MOLDE: sin cabina o sin hero, el resto de la ficha sigue funcionando */
+  if(!caja || !cabina || !hero) return;
   var secciones = Array.prototype.slice.call(document.querySelectorAll('section[id] h2 .n'))
     .map(function(n){ return {num:n.textContent, sec:n.closest('section')}; });
   secciones.forEach(function(s){
@@ -818,14 +829,16 @@
     a.href = '#' + s.sec.id;
     a.textContent = s.num;
     a.setAttribute('data-s', s.num);
+    /* el lector de pantalla oye el titulo de la seccion, no un numero suelto */
+    var h2 = s.sec.querySelector('h2');
+    a.setAttribute('aria-label', s.num + ' · ' + h2.textContent.replace(s.num,'').trim());
     caja.appendChild(a);
   });
 
   /* 2 · la cabina aparece solo cuando el hero ya paso */
-  var cabina = document.getElementById('cabina');
   new IntersectionObserver(function(es){
     cabina.classList.toggle('fija', !es[0].isIntersecting);
-  }).observe(document.querySelector('.hero'));
+  }).observe(hero);
 
   /* 3 · spy: la seccion visible pinta su numero — cambia y ya, sin show */
   var spy = new IntersectionObserver(function(es){
@@ -852,7 +865,10 @@
       es.forEach(function(e){
         if(!e.isIntersecting) return;
         ioC.unobserve(e.target);
-        var m = e.target.textContent.match(/^(\d+)(.*)$/);
+        var txt = e.target.textContent;
+        /* MOLDE: una cifra decimal («4,6» de opiniones) no se anima — se muestra y ya */
+        if(/^\d+[.,]\d/.test(txt)) return;
+        var m = txt.match(/^(\d+)(.*)$/);
         if(!m) return;
         var fin = parseInt(m[1],10), suf = m[2], t0 = performance.now();
         (function paso(t){
