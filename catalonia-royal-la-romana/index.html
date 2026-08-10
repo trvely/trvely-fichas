@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#870D31">
+<title>Cómo vender · Catalonia Royal La Romana · Trvely</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  /* ── marca ─────────────────────────────────────────────── */
+  @font-face{
+    font-family:"Extenda";
+    src:url("../assets/extenda.ttf") format("truetype");
+    font-weight:400;font-style:normal;font-display:swap;
+  }
+  @font-face{
+    font-family:"White Star";
+    src:url("../assets/whitestar.otf") format("opentype");
+    font-weight:400;font-style:normal;font-display:swap;
+  }
+  :root{
+    --burgundy:#B41241; --burgundy-osc:#870D31;
+    --beige:#F4E5D2; --crema:#FFFCF3;
+    --tinta:#1E1A18; --gris:#6B625C;
+    --linea:#E6DDCE; --beige-tinte:#F9F1E4; --burgundy-tinte:#FBEDF1;
+    --sombra:0 1px 2px rgba(30,26,24,.05), 0 10px 30px -12px rgba(30,26,24,.14);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--crema);color:var(--tinta);
+       font-family:"Montserrat",-apple-system,"Segoe UI",Roboto,sans-serif;
+       font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .env{max-width:1080px;margin:0 auto;padding:0 20px}
+  img{max-width:100%;display:block}
+  a{color:var(--burgundy)}
+
+  /* ── la cabina: mini-barra fija con spy ─────────────────────
+     Aparece solo cuando el hero ya paso. Las anclas 01-09 se
+     AUTOGENERAN leyendo los h2 (cero mantenimiento por ficha). */
+  .cabina{position:fixed;top:0;left:0;right:0;z-index:50;
+        background:rgba(255,252,243,.96);border-bottom:1px solid var(--linea);
+        transform:translateY(-105%);transition:transform .25s ease-out}
+  @supports (backdrop-filter: blur(8px)){
+    .cabina{background:rgba(255,252,243,.78);backdrop-filter:blur(8px)}
+  }
+  .cabina.fija{transform:translateY(0)}
+  .cab-env{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;
+        align-items:center;gap:18px;min-height:52px}
+  .cab-nombre{font-weight:800;font-size:13.5px;white-space:nowrap}
+  .cab-datos{font-size:11px;font-weight:800;color:var(--burgundy);
+        letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+  .cab-anclas{margin-left:auto;display:flex;overflow-x:auto;scrollbar-width:none}
+  .cab-anclas::-webkit-scrollbar{display:none}
+  /* 44px: alto y ancho minimos tactiles, tambien en escritorio */
+  .cab-anclas a{display:flex;align-items:center;justify-content:center;
+        min-width:44px;min-height:44px;font-size:12px;font-weight:700;
+        color:var(--gris);text-decoration:none}
+  .cab-anclas a.activa{color:var(--burgundy);font-weight:800}
+  @media(max-width:760px){.cab-datos{display:none}}
+
+  /* ── aviso del reloj ───────────────────────────────────── */
+  .reloj{background:var(--burgundy-osc);color:#fff;font-size:13.5px;font-weight:700;
+         padding:10px 16px;text-align:center;letter-spacing:.01em}
+  .reloj b{background:rgba(255,255,255,.18);padding:2px 9px;border-radius:99px;margin-right:6px}
+
+  /* ── hero ──────────────────────────────────────────────── */
+  .hero{position:relative;border-radius:44px;overflow:hidden;margin-top:20px;
+        height:clamp(400px,56vh,560px);background:#2A2422}
+  .hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero .scrim{position:absolute;inset:0;
+        background:linear-gradient(180deg,rgba(20,12,14,.04) 32%,rgba(20,12,14,.68) 100%)}
+  /* el padding inferior reserva la franja donde sube la .ibar (-58px / -46px en movil):
+     sin el, la barra flotante se monta encima de la ultima linea del subtitulo */
+  .hero .texto{position:absolute;left:0;right:0;bottom:0;
+        padding:clamp(24px,4.5vw,46px);padding-bottom:clamp(84px,9vw,104px)}
+  .eyebrow{color:var(--beige);font-weight:700;font-size:12px;letter-spacing:.22em;
+        text-transform:uppercase}
+  h1{font-family:"Extenda","Montserrat",sans-serif;font-weight:400;color:#fff;
+     font-size:clamp(44px,8.5vw,96px);line-height:.95;text-transform:uppercase;
+     margin:10px 0 10px;text-shadow:0 3px 30px rgba(0,0,0,.45)}
+  .sub{color:#fff;opacity:.95;font-size:clamp(15px,2.1vw,18.5px);max-width:58ch;margin:0;
+       text-shadow:0 1px 14px rgba(0,0,0,.4)}
+
+  /* ── barra flotante de datos ───────────────────────────── */
+  .ibar{background:var(--crema);border-radius:40px;box-shadow:0 0 40px -18px rgba(30,26,24,.3);
+        display:flex;flex-wrap:wrap;gap:20px 44px;padding:26px 44px;
+        margin:-58px 28px 0;position:relative;z-index:2}
+  .ibar .item{min-width:0}
+  .ibar .k{color:var(--burgundy);font-size:10px;font-weight:800;letter-spacing:.14em;
+        text-transform:uppercase}
+  .ibar .v{font-weight:700;font-size:15px;margin-top:3px}
+
+  /* ── Triana, la mentora ────────────────────────────────── */
+  .mentora{display:flex;align-items:center;gap:18px;background:#fff;border:1px solid var(--linea);
+        border-radius:22px;padding:18px 24px;margin:34px 0 6px}
+  .mentora .foto{flex:0 0 auto;width:74px;height:74px;border-radius:50%;overflow:hidden;
+        background:var(--beige);border:2px solid var(--beige)}
+  .mentora .foto img{width:100%;height:145%;object-fit:cover;object-position:top}
+  .mentora .quien{font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+        color:var(--burgundy);margin-bottom:4px}
+  .mentora p{margin:0;font-size:15px;max-width:70ch}
+  .mentora .regla-oro{margin-top:12px;padding-top:12px;border-top:1px solid var(--linea);
+        font-size:14px;color:var(--gris)}
+  .mentora .regla-oro strong{color:var(--tinta)}
+
+  /* ── la firma del proyecto ─────────────────────────────── */
+  .filosofia{text-align:center;margin:56px 0 8px;padding:34px 20px;
+        border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+  .filosofia q{font-family:"White Star","Montserrat",cursive;font-weight:400;
+        font-size:clamp(30px,5.6vw,46px);color:var(--burgundy);line-height:1.15;
+        display:block;quotes:none}
+  .filosofia span{display:block;margin-top:12px;font-size:11px;font-weight:800;
+        letter-spacing:.2em;text-transform:uppercase;color:var(--gris)}
+
+  /* ── secciones ─────────────────────────────────────────── */
+  /* 72px = 52px de la cabina fija + aire; al saltar por ancla el h2 no queda tapado */
+  section{padding:46px 0 8px;scroll-margin-top:72px}
+  h2{margin:0 0 18px;font-size:clamp(20px,3vw,25px);font-weight:800;letter-spacing:-.01em}
+  h2 .n{display:block;font-size:11.5px;font-weight:800;letter-spacing:.24em;
+        color:var(--burgundy);margin-bottom:6px}
+  h3{font-size:17px;margin:22px 0 8px;font-weight:800}
+  p{margin:0 0 12px;max-width:74ch}
+  .lead{font-size:19px;line-height:1.5;font-weight:600;max-width:66ch}
+
+  .tarjeta{background:#fff;border:1px solid var(--linea);border-radius:18px;
+           padding:22px 24px;margin-bottom:14px}
+  .rejilla{display:grid;gap:14px}
+  @media(min-width:760px){.rejilla.dos{grid-template-columns:1fr 1fr}}
+
+  ul{margin:0;padding-left:2px;list-style:none} li{margin-bottom:8px;padding-left:24px;position:relative}
+  ul.si li::before{content:"✓";position:absolute;left:0;color:var(--burgundy);font-weight:800}
+  ul.no li::before{content:"✕";position:absolute;left:0;color:var(--gris);font-weight:800}
+
+  /* ── bandas: un solo idioma de color ──────────────────────
+     Re-rango aprobado por el PATRON (09-ago): solo 3 bandas rojas
+     (menores 18+, Privileged falso, bebidas nacionales); el resto
+     queda en aviso neutro para que la alerta recupere su grito. */
+  .banda{border:1px solid var(--linea);border-left:4px solid var(--burgundy);
+         background:#fff;padding:16px 19px;border-radius:0 14px 14px 0;margin:16px 0}
+  .banda.alerta{background:var(--burgundy-tinte);border-color:#F0D6DE;border-left-color:var(--burgundy)}
+  .banda .t{display:inline-block;font-weight:800;font-size:11px;letter-spacing:.1em;
+        text-transform:uppercase;margin-bottom:8px;color:var(--burgundy)}
+  .banda.alerta .t{background:var(--burgundy);color:#fff;padding:3px 11px;border-radius:99px}
+
+  /* ── guiones de Triana ─────────────────────────────────── */
+  .guion{background:var(--beige-tinte);border-radius:12px;padding:14px 16px;margin-top:10px;
+         font-size:14.5px;font-style:italic;border-left:3px solid var(--burgundy)}
+  .guion::before{content:"El guion de Triana";display:block;font-style:normal;font-size:10.5px;
+         letter-spacing:.14em;text-transform:uppercase;color:var(--burgundy);
+         margin-bottom:6px;font-weight:800}
+
+  /* ── galería con lightbox ──────────────────────────────── */
+  .gal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .gal a{display:block;border-radius:18px;overflow:hidden;line-height:0;box-shadow:var(--sombra)}
+  .gal img{width:100%;height:150px;object-fit:cover;cursor:pointer;transition:transform .4s ease}
+  .gal a:hover img{transform:scale(1.04)}
+  @media(max-width:640px){.gal{grid-template-columns:repeat(2,1fr)}.gal img{height:120px}}
+
+  .lbx{display:none;position:fixed;inset:0;z-index:9999;background:rgba(15,2,8,.94);
+       align-items:center;justify-content:center;padding:26px}
+  .lbx.abierta{display:flex}
+  .lbx img{max-width:min(1080px,92vw);max-height:84vh;border-radius:14px;
+       box-shadow:0 20px 80px rgba(0,0,0,.5)}
+  .lbx button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;
+       cursor:pointer;border-radius:50%;width:46px;height:46px;font-size:22px;line-height:1;
+       display:flex;align-items:center;justify-content:center;transition:background .2s}
+  .lbx button:hover{background:rgba(255,255,255,.26)}
+  .lbx .cerrar{top:20px;right:20px}
+  .lbx .ant{left:14px;top:50%;transform:translateY(-50%)}
+  .lbx .sig{right:14px;top:50%;transform:translateY(-50%)}
+  .lbx .cuenta{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);
+       color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.08em;opacity:.8}
+
+  /* ── tabla ─────────────────────────────────────────────── */
+  .tabla-envoltura{overflow-x:auto;border-radius:18px;border:1px solid var(--linea)}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;background:#fff;min-width:520px}
+  th{background:var(--beige-tinte);text-align:left;padding:13px 14px;font-size:11.5px;
+     letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--linea)}
+  td{padding:13px 14px;border-bottom:1px solid var(--linea);vertical-align:top;
+     transition:background-color .15s ease}
+  tr:last-child td{border-bottom:0}
+  /* hover funcional: ilumina la fila; NUNCA atenua las demas (la tabla se lee comparando) */
+  tr:hover td{background:var(--beige-tinte)}
+  .pill{display:inline-block;padding:3px 12px;border-radius:99px;font-size:11.5px;font-weight:800;
+        letter-spacing:.04em;white-space:nowrap}
+  .pill.si{background:var(--burgundy);color:#fff}
+  .pill.nou{background:transparent;color:var(--gris);border:1.5px solid var(--linea)}
+
+  /* ── desplegables ──────────────────────────────────────── */
+  details{background:#fff;border:1px solid var(--linea);border-radius:14px;
+          padding:15px 18px;margin-bottom:10px}
+  /* min-height 44px: es lo que se toca con el pulgar en el celular (regla de marca) */
+  summary{cursor:pointer;font-weight:700;font-size:15.5px;list-style:none;
+          display:flex;align-items:center;gap:12px;min-height:44px}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"+";color:var(--burgundy);font-weight:800;font-size:19px;
+          line-height:1.2;flex:0 0 auto;transition:rotate .2s ease-out}
+  details[open] summary::before{rotate:45deg}
+  details[open] summary{margin-bottom:10px;color:var(--burgundy)}
+  /* apertura suave donde el navegador lo soporta; en el resto, corte clasico sin romper nada */
+  @supports (interpolate-size: allow-keywords){
+    :root{interpolate-size:allow-keywords}
+    details::details-content{block-size:0;overflow:clip;
+      transition:block-size .28s ease-out, content-visibility .28s allow-discrete}
+    details[open]::details-content{block-size:auto}
+  }
+
+  /* ── cifras ────────────────────────────────────────────── */
+  .cifras{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:12px}
+  .cifra{background:#fff;border:1px solid var(--linea);border-radius:16px;padding:17px}
+  /* tabular-nums: el count-up no hace bailar el ancho del numero */
+  .cifra b{display:block;font-size:28px;line-height:1.1;color:var(--burgundy);font-weight:800;
+         font-variant-numeric:tabular-nums}
+  .cifra span{font-size:12.5px;color:var(--gris)}
+
+  .fuente{font-size:12px;color:var(--gris);margin-top:10px;line-height:1.55}
+
+  /* ── la familia Catalonia ──────────────────────────────── */
+  .familia{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:14px}
+  .prop{border-radius:20px;overflow:hidden;min-height:196px;position:relative}
+  .prop.foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .prop.foto .velo{position:absolute;inset:0;
+        background:linear-gradient(180deg,rgba(20,12,14,0) 42%,rgba(20,12,14,.72) 100%)}
+  .prop.foto .texto{position:absolute;left:0;right:0;bottom:0;padding:18px 20px;color:#fff}
+  .prop.foto .nom{font-weight:800;font-size:17px;line-height:1.2}
+  .prop.foto .pais{font-size:12.5px;opacity:.9;margin-top:2px}
+  .prop.texto-solo{background:var(--beige-tinte);border:1px solid var(--linea);
+        padding:20px;display:flex;flex-direction:column;justify-content:space-between;gap:14px}
+  .prop.texto-solo .nom{font-weight:800;font-size:16.5px;line-height:1.25}
+  .prop.texto-solo .pais{font-size:12.5px;color:var(--gris);margin-top:3px}
+  .prop.texto-solo .nota{font-size:13px;color:var(--tinta);margin-top:8px;line-height:1.45}
+  .prox{display:inline-block;align-self:flex-start;font-size:10.5px;font-weight:800;
+        letter-spacing:.12em;text-transform:uppercase;color:var(--burgundy);
+        border:1.5px solid var(--burgundy);padding:4px 12px;border-radius:99px}
+  .prop.foto .prox{border-color:#fff;color:#fff;align-self:auto;margin-top:10px}
+
+  /* ── la banda de Triana (cierre) ───────────────────────── */
+  .t-band{background:var(--burgundy);border-radius:44px;overflow:hidden;position:relative;
+        margin:52px 0 0;color:#fff}
+  .t-band .cuerpo{display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:end}
+  .t-band .habla{padding:clamp(30px,5vw,52px)}
+  .t-band .logo{width:120px;margin-bottom:22px}
+  .t-band .titulo{font-weight:800;font-size:clamp(20px,3.2vw,27px);line-height:1.25;margin:0 0 14px}
+  .t-band p{color:#fff;opacity:.96;margin:0 0 12px;max-width:56ch;font-size:15.5px}
+  .t-band .firma-triana{font-size:14px;font-style:italic;opacity:.95;margin-top:18px}
+  .t-band .firma-triana b{font-style:normal}
+  .t-band .enlaces{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+  .cta{display:inline-flex;align-items:center;justify-content:center;min-height:44px;
+       padding:11px 30px;border-radius:66px;font-weight:700;font-size:14.5px;
+       text-decoration:none;transition:all .2s ease}
+  .cta.llena{background:var(--crema);color:var(--burgundy)}
+  .cta.llena:hover{background:#fff}
+  .cta.borde{border:1.5px solid #fff;color:#fff}
+  .cta.borde:hover{background:rgba(255,255,255,.14)}
+  .t-band .escena{position:relative;height:320px}
+  .t-band .arco{position:absolute;bottom:-70px;left:50%;transform:translateX(-50%);
+        width:270px;height:270px;border-radius:50%;background:var(--crema)}
+  .t-band .escena img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+        width:225px;height:auto}
+  @media(max-width:760px){
+    .t-band .cuerpo{grid-template-columns:1fr}
+    .t-band .escena{height:250px;order:2}
+    .t-band .arco{width:215px;height:215px;bottom:-60px}
+    .t-band .escena img{width:180px}
+  }
+
+  /* ── footer ────────────────────────────────────────────── */
+  footer{margin-top:46px;padding:30px 0 50px;border-top:1px solid var(--linea);
+         font-size:12.5px;color:var(--gris)}
+
+  /* foco visible de marca: un asesor tambien navega con Tab */
+  a:focus-visible,summary:focus-visible,button:focus-visible{
+    outline:2px solid var(--burgundy);outline-offset:2px;border-radius:4px}
+
+  /* ── móvil ─────────────────────────────────────────────── */
+  @media(max-width:640px){
+    .env{padding:0 16px}
+    .hero{border-radius:28px;height:clamp(360px,62vh,480px)}
+    .ibar{margin:-46px 10px 0;padding:20px 24px;gap:16px 26px;border-radius:26px}
+    .mentora{align-items:flex-start}
+    .cab-env{gap:10px;padding:0 12px}
+    /* en pantalla estrecha cae el prefijo de cadena: «Royal Bávaro» distingue; «Catalonia Ro…» no.
+       flex-shrink:0 → el que cede es el carril de chips (que ya sabe hacer scroll), no el nombre;
+       max-width:55% + ellipsis quedan de tope de seguridad para nombres extremos */
+    .cab-marca{display:none}
+    .cab-nombre{font-size:12.5px;overflow:hidden;text-overflow:ellipsis;
+        flex-shrink:0;max-width:55%}
+  }
+
+  /* ── accesibilidad: sin movimiento, la ficha sigue entera ─ */
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .cabina,.gal img,.cta,summary::before,td{transition:none}
+    details::details-content{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<nav class="cabina" id="cabina" aria-label="Secciones de la ficha">
+  <div class="cab-env">
+    <!-- CONVENCION FAMILIA: el prefijo de cadena va en .cab-marca; el movil lo oculta
+         y sobrevive la parte DISTINTIVA. Un solo nombre por ficha, nunca dos.
+         Hotel sin cadena (HM Alma, Whala…): no se envuelve nada y todo sigue igual. -->
+    <span class="cab-nombre"><span class="cab-marca">Catalonia </span>Royal La Romana</span>
+    <span class="cab-datos">Solo adultos 18+ · 8 categorías · Promo hasta 20 ago</span>
+    <div class="cab-anclas" id="cab-anclas"></div>
+  </div>
+</nav>
+
+<div class="reloj"><b>TEN EN CUENTA</b> La promo que sostiene estos precios se vende hasta el <strong>20 de agosto de 2026</strong>. Después, pregunta antes de cotizar.</div>
+
+<div class="env">
+
+<div class="hero">
+  <img src="https://media.trvely.com.co/hoteles/bayahibe/catalonia-royal-la-romana/hero/catalonia-royal-la-romana_hero.jpg" alt="Catalonia Royal La Romana">
+  <div class="scrim"></div>
+  <div class="texto">
+    <div class="eyebrow">Ficha del asesor · Cómo vender</div>
+    <h1>Catalonia<br>Royal La Romana</h1>
+    <p class="sub">Todo incluido <strong>solo para adultos</strong> en Playa Dominicus, Bayahíbe.
+    Con acceso al complejo Catalonia Bayahíbe, ubicado justo al lado.</p>
+  </div>
+</div>
+
+<div class="ibar">
+  <div class="item"><div class="k">Edad</div><div class="v">Solo adultos · 18+</div></div>
+  <div class="item"><div class="k">Tamaño</div><div class="v">211 habitaciones</div></div>
+  <div class="item"><div class="k">Distinción</div><div class="v">AAA Four Diamond</div></div>
+  <div class="item"><div class="k">Plan</div><div class="v">Todo incluido</div></div>
+  <div class="item"><div class="k">Aeropuerto</div><div class="v">La Romana · 20 km</div></div>
+</div>
+
+<div class="mentora">
+  <div class="foto">
+    <picture>
+      <source srcset="../assets/triana.webp" type="image/webp">
+      <img src="../assets/triana.png" alt="Triana">
+    </picture>
+  </div>
+  <div>
+    <div class="quien">Triana · Te acompaña en esta venta</div>
+    <p>Aquí tienes lo esencial para recomendar este hotel con seguridad: a quién le funciona, qué
+    incluye, qué debes confirmar y cómo explicárselo al cliente con claridad. Donde veas
+    <em>«El guion de Triana»</em>, son palabras listas para decirle al cliente.</p>
+    <p class="regla-oro">El hotelero nos entrega los hechos; <strong>Trvely los convierte en
+    conocimiento comercial.</strong> No copiamos por copiar, no inventamos, no exageramos — y
+    cuando hay una duda, preguntamos antes de prometer.</p>
+  </div>
+</div>
+
+<section id="s01">
+  <h2><span class="n">01</span>En 10 segundos</h2>
+  <p class="lead">Un hotel <strong>pequeño de 211 habitaciones, solo para adultos</strong>, en Playa
+  Dominicus, con <strong>AAA Four Diamond</strong> y área de playa exclusiva. Y una ventaja que
+  ninguno de sus hermanos tiene: <strong>aquí no existe el programa Privileged</strong>, así que
+  todo lo que aparece en el plan es para todos los huéspedes. El plan incluye además entrar al
+  Catalonia Bayahíbe, el resort familiar de al lado.</p>
+  <div class="guion">Tienes un hotel pequeño y tranquilo, solo de adultos, con su propia área de
+  playa. Y cuando quieras más movimiento y entretenimiento, entras al complejo de al lado con tu
+  pulsera.</div>
+</section>
+
+<section id="s02">
+  <h2><span class="n">02</span>A quién sí y a quién no</h2>
+  <div class="rejilla dos">
+    <div class="tarjeta">
+      <h3 style="margin-top:0">Es el hotel para…</h3>
+      <ul class="si">
+        <li><strong>Parejas</strong> — es el perfil que el hotelero declara y el que mejor lo aprovecha.</li>
+        <li><strong>Luna de miel y aniversarios</strong> — dos categorías Romance y amenidades de novios.</li>
+        <li><strong>Dos amigas o dos amigos</strong> que buscan un ambiente tranquilo y exclusivo.</li>
+        <li>Quien quiera <strong>habitación con acceso directo a la piscina</strong>: hay tres
+        categorías swim-up, algo que el hotel vecino no ofrece.</li>
+        <li>Quien valore <strong>un plan sin letra pequeña por categoría</strong>: aquí no hay
+        beneficios reservados a unos pocos.</li>
+      </ul>
+    </div>
+    <div class="tarjeta">
+      <h3 style="margin-top:0">No es el hotel para…</h3>
+      <ul class="no">
+        <li><strong>Familias con menores.</strong> El hotel es 18+ sin excepción: no admite menores.</li>
+        <li>Grupos que necesiten <strong>más de 3 personas en una habitación</strong>: ninguna categoría lo permite.</li>
+        <li>Quien prefiera <strong>un complejo de gran escala</strong> con toda la oferta concentrada dentro: son 211 habitaciones.</li>
+        <li>Quien viaje <strong>por el buceo</strong>: aquí es una clase de iniciación en la piscina.</li>
+        <li>Quien viaje <strong>por el golf</strong>: este hotel no lo incluye.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="banda alerta">
+    <div class="t">Esto se confirma antes de cotizar</div>
+    Pregunta por las edades al abrir la conversación. Si viaja un menor de 18, la recomendación es
+    el <strong>Catalonia Bayahíbe</strong>, el hotel familiar que está justo al lado y comparte la
+    misma playa. Es el mismo destino, resuelto con el hotel correcto.
+  </div>
+</section>
+
+<section id="s03">
+  <h2><span class="n">03</span>Enséñaselo</h2>
+  <p>Fotos reales del hotel. Para mandárselas al cliente, usa el enlace de la galería: está
+  diseñada para que tú mantengas el acompañamiento comercial.</p>
+  <div class="gal">
+    <a href="https://media.trvely.com.co/hoteles/bayahibe/catalonia-royal-la-romana/full/catalonia-royal-la-romana_003.jpg" target="_blank" rel="noopener"><img loading="lazy" src="https://media.trvely.com.co/hoteles/bayahibe/catalonia-royal-la-romana/thumb/catalonia-royal-la-romana_003.jpg" alt="Catalonia Royal La Romana, foto 1 de 8"></a>
+    <a href="https://media.trvely.com.co/hoteles/bayahibe/catalonia-royal-la-romana/full/catalonia-royal-la-romana_008.jpg" target="_blank" rel="noopener"><img loading="lazy" src="https://media.trvely.com.co/hoteles/bayahibe/catalonia-royal-la-romana/thumb/catalonia-royal-la-romana_008.jpg" alt="Catalonia Royal La Romana, foto 2 de 8"></a>
+    <a href="https://media.trvely.com.co/hoteles/bayahibe/catalonia-royal-la-romana/full/catalonia-royal-la-romana_014.jpg" target="_blank" rel="noopener"><img loading="lazy" src="https://media.trvely.com.co/hoteles/bayahibe/catalonia-royal-la-romana/thumb/catalonia-royal-la-romana_014.jpg" alt="Catalonia Royal La Romana, foto 3 de 8"></a>
+    <a href="https://media.trvely.com.co/hoteles/bayahibe/catalonia-royal-la-romana/full/catalonia-royal-la-romana_019.jpg" target="_blank" rel="noopener"><img loading="lazy" src="https://media.trvely.com.co/hoteles/bayahibe/catalonia-royal-la-romana/thumb/catalonia-royal-la-romana_019.jpg" alt="Catalonia Royal La Romana, foto 4 de 8"></a>
+    <a href="https://media.trvely.com.co/hoteles/bayahibe/catalonia-royal-la-romana/full/catalonia-royal-la-romana_025.jpg" target="_blank" rel="noopener"><img loading="lazy" src="https://media.trvely.com.co/hoteles/bayahibe/catalonia-royal-la-romana/thumb/catalonia-royal-la-romana_025.jpg" alt="Catalonia Royal La Romana, foto 5 de 8"></a>
+    <a href="https://media.trvely.com.co/hoteles/bayahibe/catalonia-royal-la-romana/full/catalonia-royal-la-romana_031.jpg" target="_blank" rel="noopener"><img loading="lazy" src="https://media.trvely.com.co/hoteles/bayahibe/catalonia-royal-la-romana/thumb/catalonia-royal-la-romana_031.jpg" alt="Catalonia Royal La Romana, foto 6 de 8"></a>
+    <a href="https://media.trvely.com.co/hoteles/bayahibe/catalonia-royal-la-romana/full/catalonia-royal-la-romana_038.jpg" target="_blank" rel="noopener"><img loading="lazy" src="https://media.trvely.com.co/hoteles/bayahibe/catalonia-royal-la-romana/thumb/catalonia-royal-la-romana_038.jpg" alt="Catalonia Royal La Romana, foto 7 de 8"></a>
+    <a href="https://media.trvely.com.co/hoteles/bayahibe/catalonia-royal-la-romana/full/catalonia-royal-la-romana_047.jpg" target="_blank" rel="noopener"><img loading="lazy" src="https://media.trvely.com.co/hoteles/bayahibe/catalonia-royal-la-romana/thumb/catalonia-royal-la-romana_047.jpg" alt="Catalonia Royal La Romana, foto 8 de 8"></a>
+  </div>
+  <p class="fuente">Este es el enlace que le compartes al cliente:
+  <a href="https://galerias.trvely.com.co/catalonia-royal-la-romana/" target="_blank" rel="noopener">galerias.trvely.com.co/catalonia-royal-la-romana</a> — 50 fotos.
+  Trvely ya curó y organizó ese material para que tú acompañes la decisión y expliques el resto.<br>
+  Las fotos no llevan pie porque todavía no está registrado qué espacio muestra cada una. Si no
+  reconoces un espacio, confírmalo antes de nombrarlo.</p>
+</section>
+
+<section id="s04">
+  <h2><span class="n">04</span>Lo que entra en el plan</h2>
+  <div class="rejilla dos">
+    <div class="tarjeta">
+      <h3 style="margin-top:0">Incluido</h3>
+      <ul class="si">
+        <li>Buffet <strong>Thalassa</strong> y restaurantes a la carta</li>
+        <li><strong>Bebidas nacionales ilimitadas</strong></li>
+        <li>Actividades diarias: aeróbicos, aqua aeróbicos y clases de baile latino</li>
+        <li><strong>Deportes náuticos sin motor</strong>: snorkel, kayak y catamarán</li>
+        <li>Una clase de buceo <strong>de iniciación, en la piscina</strong></li>
+        <li><strong>Room service 24 horas, en todas las habitaciones</strong></li>
+        <li><strong>Área de playa exclusiva</strong> para huéspedes del hotel</li>
+        <li>Solárium con hamacas y <strong>camas balinesas</strong></li>
+        <li>Cancha de tenis, gimnasio y zona de computadores</li>
+        <li>Wifi, toallas de playa <strong>y de piscina</strong>, parqueadero gratis</li>
+        <li><strong>Acceso a todas las instalaciones del Catalonia Bayahíbe</strong></li>
+        <li>Todos los impuestos</li>
+      </ul>
+    </div>
+    <div class="tarjeta">
+      <h3 style="margin-top:0">Se paga aparte — conviene anticiparlo</h3>
+      <ul class="no">
+        <li>El <strong>Alegría Spa</strong> (tratamientos, masajes y salón de belleza)</li>
+        <li>Lavandería y asistencia médica</li>
+        <li>Excursiones</li>
+        <li>Tiendas y alquiler de auto</li>
+        <li>Servicios de conferencia</li>
+      </ul>
+    </div>
+  </div>
+  <div class="banda alerta">
+    <div class="t">Bebidas: esto sí lo afirmas con seguridad</div>
+    Vende <strong>«bebidas nacionales ilimitadas»</strong>. El folleto del hotel menciona nacionales
+    e internacionales, y para la venta de Trvely prevalece la condición comercial confirmada en
+    nuestro contrato. Si el cliente pregunta por marcas premium, dile que se lo confirmas — así la
+    expectativa que fijas es la que el hotel entrega.
+  </div>
+  <div class="banda">
+    <div class="t">Dos detalles que conviene explicar con precisión</div>
+    <strong>El buceo es una clase de iniciación, en la piscina.</strong> Es una cortesía del plan,
+    no buceo en el mar.<br><br>
+    <strong>Este hotel no incluye golf.</strong> Su hermano Royal Bávaro sí lo tiene; son hoteles
+    distintos y cada uno se vende por lo que su propio documento respalda.
+  </div>
+</section>
+
+<section id="s05">
+  <h2><span class="n">05</span>Las habitaciones, y cómo subir de categoría</h2>
+  <p>Vendemos <strong>las 8 categorías que tiene el hotel</strong>: puedes mostrarlo entero, sin
+  dejar nada fuera de precio. Van en orden de precio, de la más económica a la más alta:</p>
+  <div class="tabla-envoltura">
+  <table>
+    <tr><th>Categoría</th><th>Para quién</th><th>Piscina</th></tr>
+    <tr><td><strong>Superior</strong><br><span style="color:var(--gris);font-size:13px">La de entrada</span></td><td>Hasta 3 adultos</td><td>—</td></tr>
+    <tr><td><strong>Superior Junior Suite</strong></td><td>Hasta 3 adultos · con sala de estar</td><td>—</td></tr>
+    <tr><td>Deluxe Junior Suite</td><td>Hasta 3 adultos · baño completo y terraza más amplia</td><td>—</td></tr>
+    <tr><td>Romance Deluxe</td><td><strong>Solo 2 adultos</strong> · 37 m² · bañera ovalada y vista panorámica</td><td>—</td></tr>
+    <tr><td>Superior Swim Up</td><td><strong>Solo 2 adultos</strong> · 34,5 m² · planta baja</td><td><span class="pill si">Acceso directo</span></td></tr>
+    <tr><td>Superior Junior Suite Swim Up</td><td>Hasta 3 adultos · 39 m² · vista a la piscina central</td><td><span class="pill si">Acceso directo</span></td></tr>
+    <tr><td>Romance Deluxe Swim Up</td><td><strong>Solo 2 adultos</strong> · 37 m² · planta baja</td><td><span class="pill si">Acceso directo</span></td></tr>
+    <tr><td><strong>Duplex Suite &amp; Swimming Pool</strong></td><td>2 adultos · 54,75 m² · dos plantas, jacuzzi y botella de cortesía</td><td><span class="pill si">Privada</span></td></tr>
+  </table>
+  </div>
+
+  <div class="banda alerta">
+    <div class="t">Esta condición cambia según la categoría</div>
+    <strong>Las tres categorías Swim Up tienen acceso directo a la piscina del hotel, no piscina
+    privada.</strong> La única con piscina propia es la <strong>Duplex Suite</strong>. Preséntalas
+    por lo que sí ofrecen —salir de la terraza al agua, en planta baja— y la expectativa que fijas
+    será la que el hotel entrega.
+  </div>
+
+  <div class="banda">
+    <div class="t">Tu argumento para subir de categoría</div>
+    Entre la habitación más económica y la más alta del hotel hay una diferencia de tarifa menor de
+    la que el cliente imagina: <strong>subir de la Superior a una Swim Up cuesta poco</strong> y
+    cambia por completo la experiencia. Es el mejor argumento de upgrade de esta ficha, y sale de
+    una ventaja real: aquí ninguna categoría reserva beneficios que las demás no tengan.
+  </div>
+
+  <div class="banda">
+    <div class="t">Las Romance: sus extras piden mínimo 4 noches</div>
+    La decoración especial, el vino espumoso de bienvenida, la cena romántica y el masaje en pareja
+    de 25 minutos <strong>aplican con estancia mínima de 4 noches</strong>. Con 3 noches, no
+    aplican. Y avisa la hora de llegada al reservar para la amenidad de bienvenida.
+  </div>
+
+  <div class="banda">
+    <div class="t">La Duplex: confirma la tercera persona antes de ofrecerla</div>
+    El documento del hotel la da para <strong>2 personas</strong> y nuestro sistema permite cotizar
+    una tercera. Si tu cliente necesita tres en esa categoría, <strong>confírmalo con Producto
+    antes de ofrecerlo</strong>.
+  </div>
+</section>
+
+<section id="s06">
+  <h2><span class="n">06</span>Lo que te van a preguntar</h2>
+
+  <details><summary>¿Pueden ir niños?</summary>
+    <p>No. Es un hotel <strong>exclusivamente de adultos, desde los 18 años</strong>, y ese es
+    justamente su valor. Ponlo temprano en la conversación.</p>
+    <div class="guion">Este hotel es solo de adultos, desde los 18 años, y por eso mantiene ese
+    ambiente tranquilo. Si viajan con niños, la recomendación es el Catalonia Bayahíbe, que está
+    justo al lado, en la misma playa — y te lo cotizo ahora mismo.</div>
+  </details>
+
+  <details><summary>¿De verdad puedo usar el hotel de al lado?</summary>
+    <p>Sí. El documento de este hotel promete <strong>acceso a todas las instalaciones del Catalonia
+    Bayahíbe</strong>. Está documentado <strong>en un solo sentido</strong>: nuestros huéspedes van
+    allá; lo contrario no consta, así que no se afirma.</p>
+    <div class="guion">Tu plan incluye entrar al Catalonia Bayahíbe, que está al lado y comparte la
+    misma playa. Tienes la tranquilidad de un hotel pequeño de adultos, y al lado la variedad de un
+    resort familiar cuando quieras.</div>
+  </details>
+
+  <details><summary>¿Cuántos restaurantes tiene?</summary>
+    <p><strong>Cuatro puntos de comida propios, dos de ellos para sentarse a cenar:</strong>
+    Thalassa (buffet de desayuno, y almuerzo y cena a la carta), Seablue (mariscos), Tao Cat
+    (cocina asiática) y La Isla (snacks junto a la piscina). Los de a la carta
+    <strong>requieren reserva</strong> y hay código <em>smart casual</em> en interiores.</p>
+    <p>Suma además los del hotel vecino — <strong>sin enumerarlos</strong>: uno de sus restaurantes
+    está reservado a un programa que este hotel no tiene, y esa condición se está confirmando.</p>
+    <div class="guion">Tiene cuatro puntos de comida propios, dos para sentarse a cenar, y además
+    entras a los del hotel de al lado. Los de a la carta se reservan al llegar.</div>
+  </details>
+
+  <details><summary>¿La habitación tiene piscina privada?</summary>
+    <p><strong>Solo la Duplex Suite.</strong> Las tres categorías Swim Up tienen
+    <strong>acceso directo a la piscina del hotel</strong> desde la terraza, en planta baja — que es
+    una experiencia distinta y también se vende muy bien.</p>
+    <div class="guion">Las swim-up te dejan salir de tu terraza directo al agua de la piscina. Si
+    lo que buscas es una piscina solo tuya, esa es la Duplex Suite.</div>
+  </details>
+
+  <details><summary>¿Cuántas estrellas tiene?</summary>
+    <p>Es <strong>AAA Four Diamond</strong>, y así se dice. Los diamantes AAA y las estrellas son
+    dos escalas distintas: no se mezclan ni se convierten.</p>
+    <div class="guion">Tiene la distinción AAA Four Diamond, que es un reconocimiento de calidad de
+    servicio e instalaciones.</div>
+  </details>
+
+  <details><summary>¿Cuánto se demora del aeropuerto?</summary>
+    <p><strong>20 kilómetros del aeropuerto de La Romana</strong> y 72 del de Punta Cana. El único
+    tiempo confirmado por el hotel es el de <strong>Santo Domingo: hora y media</strong>. Los
+    kilómetros no se convierten en minutos.</p>
+    <div class="guion">Estás a veinte kilómetros del aeropuerto de La Romana. El traslado te lo
+    organizamos nosotros y al cotizar te confirmo el tiempo exacto.</div>
+  </details>
+
+  <details><summary>¿Tiene golf?</summary>
+    <p><strong>No.</strong> Este hotel no incluye golf en su plan. Si tu cliente lo busca, es otro
+    hotel de la familia — pregúntale a Producto cuál cotizar.</p>
+  </details>
+
+  <details><summary>¿Y si me piden luna de miel?</summary>
+    <p>Hay amenidades de novios: decoración romántica y vino espumoso a la llegada.
+    <strong>Escribe «honeymoon» en la reserva</strong> — si no se escribe, no llega. Es un dato que
+    vende y cuesta cero.</p>
+    <div class="guion">Si me confirmas que es luna de miel, lo dejo anotado en la reserva para que
+    les preparen la habitación con decoración y vino espumoso a la llegada.</div>
+  </details>
+</section>
+
+<section id="s07">
+  <h2><span class="n">07</span>Lo que no se promete</h2>
+  <p>La letra fina que distingue al asesor que domina este producto: esto es lo que este hotel no
+  ofrece — y la forma segura de decir cada cosa.</p>
+  <div class="tarjeta">
+    <ul class="no">
+      <li><strong>Menores de 18.</strong> Es un hotel exclusivamente de adultos, sin excepción, y
+      su valor es justamente ese. Para familias, la recomendación es el Catalonia Bayahíbe.</li>
+      <li><strong>Piscina privada en las categorías Swim Up.</strong> Tienen acceso directo a la
+      piscina del hotel; la privada es la Duplex. El detalle completo está en la sección 05.</li>
+      <li><strong>Bebidas internacionales.</strong> Nuestro contrato confirma nacionales: eso es lo
+      que se afirma.</li>
+      <li><strong>Playa con Bandera Azul.</strong> Esa distinción es del Catalonia Bayahíbe. Este
+      hotel tiene su propia área de playa exclusiva, que es un argumento distinto y también fuerte.</li>
+      <li><strong>Kids Club ni zonas infantiles.</strong> No existen: el hotel es 18+.</li>
+      <li><strong>Golf.</strong> No está en su plan.</li>
+      <li><strong>Villas.</strong> Son 211 habitaciones; las villas son de otro hotel de la familia.</li>
+      <li><strong>Un número de restaurantes que incluya los del vecino.</strong> Se ofrece «acceso a
+      las instalaciones del Catalonia Bayahíbe», sin enumerarlos: una de sus mesas está reservada a
+      un programa que este hotel no tiene.</li>
+      <li><strong>Metros de la Superior, la Superior Junior Suite y la Deluxe Junior Suite.</strong>
+      No están documentados. Si el dato no está documentado, se confirma antes de comunicarlo.</li>
+      <li><strong>Minutos de traslado desde La Romana o Punta Cana.</strong> El hotel da kilómetros;
+      solo Santo Domingo tiene tiempo confirmado.</li>
+      <li><strong>Que un huésped del Catalonia Bayahíbe entre aquí.</strong> El acceso está
+      documentado en un solo sentido, y solo se afirma desde este hotel.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="s08">
+  <h2><span class="n">08</span>Datos duros</h2>
+  <div class="cifras">
+    <div class="cifra"><b>211</b><span>habitaciones · todas con balcón o terraza</span></div>
+    <div class="cifra"><b>18+</b><span>solo adultos, sin excepción</span></div>
+    <div class="cifra"><b>8</b><span>categorías · las 8 se pueden cotizar</span></div>
+    <div class="cifra"><b>2</b><span>piscinas · sin restricción de acceso</span></div>
+    <div class="cifra"><b>4</b><span>puntos de comida · 2 de mantel</span></div>
+    <div class="cifra"><b>3</b><span>bares propios</span></div>
+    <div class="cifra"><b>20 km</b><span>del aeropuerto de La Romana</span></div>
+    <div class="cifra"><b>3</b><span>categorías swim-up · el vecino no tiene</span></div>
+  </div>
+  <p class="fuente">Fuente: Fact Sheet oficial del hotel (13 páginas), contrato TARIFARIO 2026-27
+  LATAM RD y verificación en nuestros sistemas. Las tarifas y la disponibilidad se confirman
+  siempre al cotizar.</p>
+</section>
+
+<section id="s09">
+  <h2><span class="n">09</span>La familia Catalonia</h2>
+  <p>Ocho propiedades Catalonia tienen página publicada. Conócelas: cada una tiene un cliente
+  distinto, y saber cuál es cuál también es vender. <strong>Las fichas de la familia vienen en
+  camino.</strong></p>
+  <div class="familia">
+    <div class="prop foto">
+      <img loading="lazy" src="https://media.trvely.com.co/hoteles/bayahibe/catalonia-bayahibe/thumb/catalonia-bayahibe_003.jpg" alt="Catalonia Bayahíbe">
+      <div class="velo"></div>
+      <div class="texto">
+        <div class="nom">Catalonia Bayahíbe</div>
+        <div class="pais">República Dominicana</div>
+        <span class="prox">Ficha en camino</span>
+      </div>
+    </div>
+    <div class="prop texto-solo">
+      <div>
+        <div class="nom">Catalonia Royal Bávaro</div>
+        <div class="pais">Punta Cana · República Dominicana</div>
+        <div class="nota">El otro solo-adultos de la familia, con casino y teatro al lado.</div>
+      </div>
+      <span class="prox">Ficha publicada</span>
+    </div>
+    <div class="prop texto-solo">
+      <div>
+        <div class="nom">Catalonia Bávaro Beach</div>
+        <div class="pais">Punta Cana · República Dominicana</div>
+        <div class="nota">El familiar de Punta Cana — tu recomendación cuando viajan niños.</div>
+      </div>
+      <span class="prox">Ficha en camino</span>
+    </div>
+    <div class="prop texto-solo">
+      <div>
+        <div class="nom">Catalonia Riviera Maya</div>
+        <div class="pais">México</div>
+      </div>
+      <span class="prox">Ficha en camino</span>
+    </div>
+    <div class="prop texto-solo">
+      <div>
+        <div class="nom">Catalonia Grand Costa Mujeres</div>
+        <div class="pais">México</div>
+      </div>
+      <span class="prox">Ficha en camino</span>
+    </div>
+    <div class="prop texto-solo">
+      <div>
+        <div class="nom">Catalonia Playa Maroma</div>
+        <div class="pais">México</div>
+      </div>
+      <span class="prox">Ficha en camino</span>
+    </div>
+    <div class="prop texto-solo">
+      <div>
+        <div class="nom">Catalonia Royal Tulum</div>
+        <div class="pais">México</div>
+      </div>
+      <span class="prox">Ficha en camino</span>
+    </div>
+    <div class="prop texto-solo">
+      <div>
+        <div class="nom">Catalonia Yucatán Beach</div>
+        <div class="pais">México</div>
+      </div>
+      <span class="prox">Ficha en camino</span>
+    </div>
+  </div>
+</section>
+
+<div class="t-band">
+  <div class="cuerpo">
+    <div class="habla">
+      <img class="logo" src="../assets/logo-beige.png" alt="Trvely">
+      <div class="titulo">La regla que protege tu gestión comercial</div>
+      <p><strong>La página pública del hotel no es la herramienta de esta venta.</strong> Para
+      enseñar el hotel usa <strong>la galería</strong>: Trvely ya curó, organizó y explicó ese
+      material para que tú acompañes la decisión.</p>
+      <p>Conserva tú la conversación y el acompañamiento de principio a fin. Todo lo demás, se lo
+      explicas tú con esta ficha en la mano.</p>
+      <div class="firma-triana">«Ese cliente confió en tu asesoría. Conoces al cliente, conoces el
+      producto y tienes las herramientas para llevar la conversación hasta el final —
+      acompáñalo hasta cerrar su viaje.» — <b>Triana</b></div>
+      <div class="enlaces">
+        <a class="cta llena" href="https://galerias.trvely.com.co/catalonia-royal-la-romana/" target="_blank" rel="noopener">Galería para el cliente</a>
+        <a class="cta borde" href="https://galerias.trvely.com.co/" target="_blank" rel="noopener">Todas las galerías</a>
+      </div>
+    </div>
+    <div class="escena">
+      <div class="arco"></div>
+      <picture>
+        <source srcset="../assets/triana.webp" type="image/webp">
+        <img src="../assets/triana.png" alt="Triana, la asesora de Trvely">
+      </picture>
+    </div>
+  </div>
+</div>
+
+<div class="filosofia">
+  <q>Es más barato preguntar que corregir</q>
+  <span>La forma de trabajar de Trvely</span>
+</div>
+
+<footer>
+  <div><strong>Trvely · Área de Producto</strong> — material interno de apoyo comercial.
+  No se comparte con el cliente ni se publica fuera de la empresa.</div>
+  <div style="margin-top:8px">Si un dato no cuadra con lo que te dice el cliente o el hotelero,
+  avísale a Producto <strong>antes</strong> de prometerlo.</div>
+  <div style="margin-top:8px">Ficha v1 · 9 de agosto de 2026.</div>
+</footer>
+
+</div>
+
+<div class="lbx" id="lbx" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <img id="lbx-img" alt="Catalonia Royal Bávaro — foto ampliada">
+  <button class="ant" id="lbx-ant" aria-label="Anterior">‹</button>
+  <button class="sig" id="lbx-sig" aria-label="Siguiente">›</button>
+  <button class="cerrar" id="lbx-cerrar" aria-label="Cerrar">×</button>
+  <div class="cuenta" id="lbx-cuenta"></div>
+</div>
+
+<script>
+(function(){
+  var enlaces = Array.prototype.slice.call(document.querySelectorAll('#galeria a'));
+  var lbx = document.getElementById('lbx');
+  /* MOLDE: si una ficha futura no trae galeria (o no trae lightbox), aqui no pasa nada */
+  if(!enlaces.length || !lbx) return;
+  var fulls = enlaces.map(function(a){ return a.href; });
+  var img = document.getElementById('lbx-img');
+  var cuenta = document.getElementById('lbx-cuenta');
+  var i = 0;
+
+  function abrir(n){
+    var recienAbierta = !lbx.classList.contains('abierta');
+    i = (n + fulls.length) % fulls.length;
+    img.src = fulls[i];
+    cuenta.textContent = (i+1) + ' / ' + fulls.length;
+    lbx.classList.add('abierta');
+    document.body.style.overflow = 'hidden';
+    /* al abrir con teclado, el foco entra al dialogo (solo la primera vez, no en cada flecha) */
+    if(recienAbierta) document.getElementById('lbx-cerrar').focus();
+  }
+  function cerrar(){
+    lbx.classList.remove('abierta');
+    img.src = '';
+    document.body.style.overflow = '';
+  }
+
+  enlaces.forEach(function(a, n){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      abrir(n);
+    });
+  });
+  document.getElementById('lbx-cerrar').addEventListener('click', cerrar);
+  document.getElementById('lbx-ant').addEventListener('click', function(e){ e.stopPropagation(); abrir(i-1); });
+  document.getElementById('lbx-sig').addEventListener('click', function(e){ e.stopPropagation(); abrir(i+1); });
+  lbx.addEventListener('click', function(e){ if(e.target === lbx) cerrar(); });
+  document.addEventListener('keydown', function(e){
+    if(!lbx.classList.contains('abierta')) return;
+    if(e.key === 'Escape') cerrar();
+    if(e.key === 'ArrowLeft') abrir(i-1);
+    if(e.key === 'ArrowRight') abrir(i+1);
+  });
+})();
+</script>
+
+<script>
+/* ── EL INSTRUMENTO: cabina + spy + count-up ─────────────────
+   Todo se autogenera leyendo los h2: cero mantenimiento por ficha.
+   Si este script no corre, la ficha queda completa: los ids son
+   estaticos y los numeros finales viven en el HTML. */
+(function(){
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!('IntersectionObserver' in window)) return;
+
+  /* 1 · anclas 01–09 desde los h2 del documento */
+  var caja = document.getElementById('cab-anclas');
+  var cabina = document.getElementById('cabina');
+  var hero = document.querySelector('.hero');
+  /* MOLDE: sin cabina o sin hero, el resto de la ficha sigue funcionando */
+  if(!caja || !cabina || !hero) return;
+  var secciones = Array.prototype.slice.call(document.querySelectorAll('section[id] h2 .n'))
+    .map(function(n){ return {num:n.textContent, sec:n.closest('section')}; });
+  secciones.forEach(function(s){
+    var a = document.createElement('a');
+    a.href = '#' + s.sec.id;
+    a.textContent = s.num;
+    a.setAttribute('data-s', s.num);
+    /* el lector de pantalla oye el titulo de la seccion, no un numero suelto */
+    var h2 = s.sec.querySelector('h2');
+    a.setAttribute('aria-label', s.num + ' · ' + h2.textContent.replace(s.num,'').trim());
+    caja.appendChild(a);
+  });
+
+  /* 2 · la cabina aparece solo cuando el hero ya paso */
+  new IntersectionObserver(function(es){
+    cabina.classList.toggle('fija', !es[0].isIntersecting);
+  }).observe(hero);
+
+  /* 3 · spy: la seccion visible pinta su numero — cambia y ya, sin show */
+  var spy = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var num = e.target.querySelector('h2 .n').textContent;
+      var activa = null;
+      caja.querySelectorAll('a').forEach(function(a){
+        var es_esta = a.getAttribute('data-s') === num;
+        a.classList.toggle('activa', es_esta);
+        if(es_esta) activa = a;
+      });
+      /* en movil, el chip activo se trae a la vista dentro de su carril */
+      if(activa && caja.scrollWidth > caja.clientWidth){
+        caja.scrollLeft = activa.offsetLeft - caja.clientWidth/2 + activa.offsetWidth/2;
+      }
+    });
+  }, {rootMargin:'-15% 0px -70% 0px'});
+  secciones.forEach(function(s){ spy.observe(s.sec); });
+
+  /* 4 · count-up en Datos duros: una vez, 700ms, y el HTML ya trae el final */
+  if(!reduce){
+    var ioC = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        ioC.unobserve(e.target);
+        var txt = e.target.textContent;
+        /* MOLDE: una cifra decimal («4,6» de opiniones) no se anima — se muestra y ya */
+        if(/^\d+[.,]\d/.test(txt)) return;
+        var m = txt.match(/^(\d+)(.*)$/);
+        if(!m) return;
+        var fin = parseInt(m[1],10), suf = m[2], t0 = performance.now();
+        (function paso(t){
+          var p = Math.min((t - t0)/700, 1);
+          e.target.textContent = Math.round(fin*(1-Math.pow(1-p,3))) + suf;
+          if(p < 1) requestAnimationFrame(paso);
+        })(t0);
+      });
+    }, {threshold:.4});
+    document.querySelectorAll('.cifra b').forEach(function(b){ ioC.observe(b); });
+  }
+})();
+</script>
+
+</body>
+</html>
