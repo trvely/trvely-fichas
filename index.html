@@ -76,9 +76,18 @@
   .ficha .marco img{width:100%;height:200px;object-fit:cover}
   .ficha .marco .velo{position:absolute;inset:0;
          background:linear-gradient(180deg,rgba(20,12,14,0) 45%,rgba(20,12,14,.72) 100%)}
-  .ficha .marco .rotulo{position:absolute;left:22px;right:22px;bottom:18px;color:#fff}
-  .ficha .marco .rotulo b{display:block;font-size:21px;font-weight:800;letter-spacing:-.01em}
-  .ficha .marco .rotulo span{font-size:13px;opacity:.92}
+  /* 🔴 10-AGO · EL NOMBRE Y EL DESTINO SE IMPRIMIAN UNO ENCIMA DEL OTRO.
+     Lo vio el CEO en la pagina viva: «Catalonia Bayahibe» y «Playa Dominicus · Republica
+     Dominicana» compartiendo la misma linea, ilegibles los dos. El CSS parecia correcto —el
+     `b` estaba declarado `display:block`— y el publicado era identico al local, asi que no era
+     una version vieja: era que el apilado dependia de una herencia que aqui no se cumplia.
+         *Un CSS que se lee bien no demuestra que se vea bien: eso solo lo dice abrir la pagina.*
+     Se cambia por apilado EXPLICITO (flex column): no depende de que nadie herede nada, y
+     ademas deja el `gap` bajo control para nombres de dos lineas como «Grand Costa Mujeres». */
+  .ficha .marco .rotulo{position:absolute;left:22px;right:22px;bottom:18px;color:#fff;
+         display:flex;flex-direction:column;gap:3px}
+  .ficha .marco .rotulo b{font-size:21px;font-weight:800;letter-spacing:-.01em;line-height:1.15}
+  .ficha .marco .rotulo span{font-size:13px;opacity:.92;line-height:1.3}
   .ficha .pie{padding:16px 22px 20px;display:flex;flex-wrap:wrap;gap:7px;align-items:center}
   .et{background:var(--beige-tinte);border:1px solid var(--linea);padding:4px 11px;
       border-radius:99px;font-size:11.5px;font-weight:700;color:var(--burgundy)}
@@ -327,10 +336,11 @@
       <b>Catalonia Santo Domingo</b>
       <span>Santo Domingo · República Dominicana</span>
       <span style="margin-top:8px">Su material está completo —fotos, ficha y videos propios— y por
-      eso es fácil pensar que solo falta montarlo. <strong>Pero el hotelero todavía no ha entregado
-      tarifas</strong>, así que no hay nada que cotizar. Su galería sí está publicada, por si
-      necesitas enseñarlo.</span>
-      <span class="en-camino">Sin tarifas · no se ofrece</span>
+      eso es fácil pensar que solo falta montarlo. <strong>Falta la tarifa: ya la solicitamos y
+      estamos a la espera.</strong> En cuanto la tengamos, este hotel entra como los otros nueve.
+      Mientras llega no se cotiza — pero su galería ya está publicada, así que sí puedes
+      enseñárselo a quien pregunte por Santo Domingo.</span>
+      <span class="en-camino">Tarifa en gestión · aún no se cotiza</span>
     </div>
   </div>
 </section>
@@ -339,14 +349,16 @@
   <div class="cuerpo">
     <div class="habla">
       <img class="logo" src="assets/logo-beige.png" alt="Trvely">
-      <div class="titulo">La regla que protege tu comisión</div>
-      <p><strong>Nunca le mandes al cliente la página pública del hotel.</strong> Esa página tiene
-      el canal de contacto de la empresa: el cliente que tú trabajaste durante semanas puede
-      escribir por ahí y <strong>la venta se la lleva otro</strong>.</p>
-      <p>Para enseñarle el hotel, usa <strong>la galería</strong> que enlaza cada ficha. No tiene
-      botón de venta — por eso existe. Todo lo demás, se lo explicas tú.</p>
-      <div class="firma">«Ese cliente es tuyo porque tú lo trabajaste. Enséñale con la galería,
-      cuéntale tú el resto — y cierra tú la venta.» — <b>Triana</b></div>
+      <div class="titulo">La regla que protege tu gestión comercial</div>
+      <p>Para mostrarle el hotel al cliente, utiliza siempre <strong>la galería que acompaña cada
+      ficha</strong>. Está diseñada para presentar el producto de forma clara y visual, mientras tú
+      mantienes el acompañamiento y la conversación comercial.</p>
+      <p>Evita enviar páginas externas que puedan sacar al cliente del proceso que vienes
+      construyendo. <strong>Tú conoces su viaje, sus necesidades y las condiciones de la
+      propuesta</strong>; por eso eres quien mejor puede orientarlo hasta tomar una decisión.</p>
+      <div class="firma">«Tú ya conoces al cliente y conoces el producto. Usa la galería para
+      mostrarle la experiencia y acompáñalo tú hasta encontrar la opción correcta.»
+      — <b>Triana</b></div>
     </div>
     <div class="retrato">
       <div class="arco"></div>
